@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Makaan - Real Estate HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
+    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+
+
+    <!-- font-awesome  -->
+    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    <!-- Template Stylesheet -->
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+
+<body>
+<div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner"
+         class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <div class="container-fluid  nav-bar" style="padding: 0">
+        <div class="login-menu flex">
+            <div></div>
+            <div class="flex">
+                <div><a href="#">login</a></div>
+                <div><label>
+                    <select>
+                        <option selected>en</option>
+                    </select>
+                </label></div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar Start -->
+    <div class="container-fluid nav-bar bg-transparent" style="padding: 0">
+
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+            <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
+                <div class="icon p-2 me-2">
+                    <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+                </div>
+                <h1 class="m-0 text-primary">Makaan</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="property-list.html" class="dropdown-item">Property List</a>
+                            <a href="property-type.html" class="dropdown-item">Property Type</a>
+                            <a href="property-agent.html" class="dropdown-item">Property Agent</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trading Platforms</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partner Service</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                            <a href="404.html" class="dropdown-item">404 Error</a>
+                        </div>
+                    </div>
+                </div>
+                <!--                <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>-->
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid header bg-white p-0">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row dark">
+            <div class="col-md-6 p-5 mt-lg-5">
+                <div class="flex">
+                    <p class="animated fadeIn box-before">
+                        Welcome to Whitecollar
+                    </p>
+                </div>
+
+                <h1 class="display-5 animated fadeIn mb-4">Style <span class="text-primary">Guide</span></h1>
+                <p class="animated fadeIn mb-4 pb-2">Collaboratively administrate empowered markets plug
+                    and play networks dynamically procrastinated </p>
+                <a href="" class="btn btn-primary py-3 px-5 me-3 animated fadeIn">Get Started</a>
+            </div>
+            <div class="col-md-6 animated fadeIn">
+                <div class="owl-carousel header-carousel">
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+                    </div>
+                    <div class="owl-carousel-item">
+                        <img class="img-fluid" src="img/carousel-2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Category Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p><span class="text-primary">&#9632;&nbsp;</span>We Are Expertise In</p>
+                <h1 class="mb-3">Why Trade with AM Broker</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4">
+                            <div class="icon mb-3">
+                                <img class="img-fluid" src="img/icon-apartment.png" alt="Icon">
+                            </div>
+                            <h6>Raw spreads&low<br/>Commissions</h6>
+                            <span>Read More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4">
+                            <div class="icon mb-3">
+                                <img class="img-fluid" src="img/icon-villa.png" alt="Icon">
+                            </div>
+                            <h6>Business<br/>Management</h6>
+                            <span>Read More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4">
+                            <div class="icon mb-3">
+                                <img class="img-fluid" src="img/icon-house.png" alt="Icon">
+                            </div>
+                            <h6>Consultants&<br/>program</h6>
+                            <span>Read More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4">
+                            <div class="icon mb-3">
+                                <img class="img-fluid" src="img/icon-housing.png" alt="Icon">
+                            </div>
+                            <h6>Company<br/>Management</h6>
+                            <span>Read More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4">
+                            <div class="icon mb-3">
+                                <img class="img-fluid" src="img/icon-building.png" alt="Icon">
+                            </div>
+                            <h6>Financial&<br/>Insurance jobs</h6>
+                            <span>Read More</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <a class="cat-item d-block bg-light text-center rounded p-3" href="">
+                        <div class="rounded p-4 " style="align-content: center;background: #00B98E">
+                            <h3 style="color: white">More Services <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                            </h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Category End -->
+
+
+    <!-- Header1 Start -->
+    <div class="container-fluid header bg-white p-0" style="margin-top: 5rem">
+        <div class="row g-0 align-items-center flex-column-reverse flex-md-row dark">
+            <div class="col-md-6 p-4">
+                <div class="flex">
+                    <p class="animated wow fadeInUp box-before" data-wow-delay="0.1s">
+                        Why Choose Me
+                    </p>
+                </div>
+
+                <h1 class="display-5 animated wow fadeInUp mb-4" data-wow-delay="0.2s">We Provide <span
+                        class="text-primary">Solutions</span> To Grow Your
+                    <span class="text-primary">Business</span></h1>
+                <p class="animated wow slideInLeft mb-4 pb-2" data-wow-delay="0.3s">Leverage agile frameworks to provide
+                    a robust synopsis for high
+                    level overviews. thinking to further the overall proposition. </p>
+                <div class="row">
+                    <div class="col-md-6 animated wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="dark-item-p flex">
+                            <div class="circle-progress" th:style="|--percentage: ${(75 / 100.0) * 360}deg;|">
+                                <span class="percentage">75%</span>
+                            </div>
+                            <div class="dark-item-p-text">
+                                <span>Clients</span>
+                                <p>Quick Response</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animated wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="dark-item-p flex">
+                            <div class="circle-progress" th:style="|--percentage: ${(75 / 100.0) * 360}deg;|">
+                                <span class="percentage">75%</span>
+                            </div>
+                            <div class="dark-item-p-text">
+                                <span>Project</span>
+                                <p>Finished Jobs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animated wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="dark-item-p flex">
+                            <div class="circle-progress" th:style="|--percentage: ${(75 / 100.0) * 360}deg;|">
+                                <span class="percentage">75%</span>
+                            </div>
+                            <div class="dark-item-p-text">
+                                <span>Project</span>
+                                <p>Finished Jobs</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 animated wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="dark-item-p flex">
+                            <div class="circle-progress" th:style="|--percentage: ${(75 / 100.0) * 360}deg;|">
+                                <span class="percentage">75%</span>
+                            </div>
+                            <div class="dark-item-p-text">
+                                <span>Project</span>
+                                <p>Finished Jobs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-5 animated wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="col-md-6">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        2,800+ Active clients
+                    </div>
+                    <div class="col-md-6">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        106+
+                    </div>
+                </div>
+
+                <div class="row mt-2  animated wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="col-md-6">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i>
+                        1,670+ <span class="star">5 <i class="fa fa-star" aria-hidden="true"></i> stars</span>
+                        reviews
+                    </div>
+                    <div class="col-md-6">
+                        <a href=""> Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 animated wow slideInRight" data-wow-delay="0.1s">
+                <img class="img-fluid" src="img/carousel-1.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Header1 End -->
+
+    <!-- logo Start -->
+    <div class="container-xxl py-5 my-3">
+        <div class="flex" style="justify-content: center;gap:50px">
+            <th:block th:each="i : ${#numbers.sequence(1, 5)}">
+                <div class="wow fadeInUp" th:data-wow-delay="|0.${i}s|">
+                    <img th:src="@{|/img/f/logo-0${i}.svg|}" alt="">
+                </div>
+            </th:block>
+        </div>
+    </div>
+    <!-- logo End -->
+
+    <!-- team Start -->
+    <div class="container-fluid p-0">
+        <div class="animated wow fadeInUp" data-wow-delay="0.1s">
+            <img th:src="@{/img/f/Team.png}" style="width: 100%" alt="">
+        </div>
+    </div>
+    <!-- team End -->
+
+    <!-- reply Start -->
+    <div class="container-xxl my-4">
+        <hr class="big-hr">
+        <div class="row">
+            <div class="col-md-4 col-sm-12">
+                <p class="box-before animated wow slideInLeft" data-wow-delay="0.1s">Testimonial</p>
+                <h2 class="mb-3  animated wow slideInLeft" data-wow-delay="0.2s">What Our Client Say’s</h2>
+                <p class=" animated wow slideInLeft" data-wow-delay="0.3s">Leverage agile frameworks to provide a robust
+                    synopsis for high level overviews.Iterative </p>
+            </div>
+            <div class="col-md-4 animated wow slideInUp" data-wow-delay="0.1s">
+                <div class="rounded p-4 " style="background-color: #F6F6F6">
+                    <div class="d-flex align-items-center animated wow slideInUp">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
+                             style="width: 60px; height: 60px;">
+                        <div class="ps-3">
+                            <h6 class="fw-bold mb-1">Nattasha Kelvin</h6>
+                            <small>Designer</small>
+                            <div class="star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p>
+                        dd an excerpt from your personal biography, or simply let the world know who you are and what
+                        you have to offer. Connect with your site visitor’s on a personal level and make sure that your
+                        site.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-md-4 animated wow slideInUp" data-wow-delay="0.3s">
+                <div class="rounded p-4" style="background-color: #F6F6F6">
+                    <div class="d-flex align-items-center">
+                        <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg"
+                             style="width: 60px; height: 60px;">
+                        <div class="ps-3">
+                            <h6 class="fw-bold mb-1">Cincinnati</h6>
+                            <small>Designer</small>
+                            <div class="star">
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>“ Leverage agile frameworks to provide a robust synopsis for high level overviews ”</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- reply End -->
+
+    <div class="container-fluid px-5">
+        <div>
+            <img th:src="@{/img/f/Subscribe box.png}" style="width: 100%" alt="">
+        </div>
+    </div>
+
+    <div class="container-fluid px-0 py-5">
+        <div>
+            <img th:src="@{/img/f/Project List.png}" style="width: 100%" alt="">
+        </div>
+    </div>
+
+    <!--form start-->
+    <div class="container-xxl  py-5">
+        <div class="row py-5" >
+            <div class="col-md-6">
+                <p class="box-before animated wow slideInLeft" data-wow-delay="0.1s">How We Work</p>
+                <h2 class="animated wow slideInLeft" data-wow-delay="0.2s">
+                    To Get Your <span class="text-primary">Business</span>
+                    To The <span class="text-primary">Next Level</span>
+                </h2>
+                <small class="animated wow slideInLeft" data-wow-delay="0.3s" style="display: inline-block">Leverage
+                    agile frameworks to provide synopsis for high level overviews.Iterative approaches to
+                    corporate strategy foster collaborative thinking to further the overal.</small>
+                <div class="flex mt-3 py-2 animated wow slideInLeft" data-wow-delay="0.4s">
+                    <div class="circle-progress" style="--percentage: 360deg;width: 100px;height: 100px">
+                        <span class="percentage">
+                            562+<br>
+                            Project
+                        </span>
+                    </div>
+                    <div style="flex: 1;word-wrap: break-word">
+                        We have 50+ years of experience. We offer whitecollar services to you
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <div class="animated wow fadeInUp" data-wow-delay="0.1s">
+                        <h5>Planning</h5>
+                        <p>Leverage agile frameworks to provide synopsis for high level overviews.</p>
+                        <hr>
+                    </div>
+
+                    <div class="animated wow fadeInUp" data-wow-delay="0.2s">
+                        <h5>Briefing</h5>
+                        <p>Leverage agile frameworks to provide synopsis for high level approaches </p>
+                        <hr>
+                    </div>
+                    <div class="animated wow fadeInUp" data-wow-delay="0.3s">
+                        <h5>Evaluation</h5>
+                        <p>Leverage agile frameworks to provide synopsis for high level overviews Iterative.</p>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-6">
+                <p class="box-before animated wow slideInRight" data-wow-delay="0.1s">Book Now</p>
+                <h2 class="animated wow slideInRight" data-wow-delay="0.2s">
+                    Get <span class="text-primary">Free</span> Business Appointment
+                </h2>
+                <div class="mt-3 p-4 animated wow fadeIn" data-wow-delay="0.3s" style="background-color: #F6F6F6">
+                    <form>
+                        <input type="text" class="form-control border-0 py-2 mb-3" placeholder="Your name" id="name"
+                               autocomplete="off">
+
+                        <input type="text" class="form-control border-0 py-2 mb-3" placeholder="Email Address"
+                               id="email" autocomplete="off">
+
+
+                        <input type="text" class="form-control border-0 py-2 mb-3" placeholder="Phone Number"
+                               id="phone" autocomplete="off">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control border-0 py-2 mb-3" placeholder="Date" id="date">
+                                <script>
+                                    $(function () {
+                                        $("#date").flatpickr({
+                                            enableTime: false,
+                                            dateFormat: "Y-m-d",
+                                        });
+                                    });
+                                </script>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control border-0 py-2 mb-3" placeholder="Time" id="time">
+                                <script>
+                                    $(function () {
+                                        $("#time").flatpickr({
+                                            enableTime: true,
+                                            noCalendar: true,
+                                            dateFormat: "H:i",
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+
+                        <textarea class="form-control border-0 py-2 mb-3" placeholder="Service Description"
+                                  id="description" style="resize: none;" rows="8"></textarea>
+
+                        <input type="submit" class="btn btn-primary w-100 py-3" value="Submit">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--form end-->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s"
+         style="padding: 0 5rem;color: white">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-md-3">LOGO</div>
+                <div class="col-md-3 flex">
+                    <div class="me-2">
+                        <a class="btn btn-outline-light btn-social" href="javascript:void(0)">
+                            <i class="fa fa-phone"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="m-0">Call Us</p>
+                        <small>+01 569 896 654</small>
+                    </div>
+                </div>
+                <div class="col-md-3 flex">
+                    <div class="me-2">
+                        <a class="btn btn-outline-light btn-social" href="javascript:void(0)">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="m-0">Mail Us</p>
+                        <small>Info@Example.com</small>
+                    </div>
+                </div>
+                <div class="col-md-3 flex">
+                    <div class="me-2">
+                        <a class="btn btn-outline-light btn-social" href="javascript:void(0)">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <p class="m-0">Location</p>
+                        <small>Amsterdam, 109-74</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-5">
+            <div class="copyright">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="box-before text-white mb-4">Quick Link</h5>
+                        <a class="btn btn-link text-white-50" href="">Home</a>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Blog</a>
+                        <a class="btn btn-link text-white-50" href="">Services</a>
+                        <a class="btn btn-link text-white-50" href="">Contact</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4 box-before">Our Services</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h5 class="text-white mb-4 box-before">Uitility Page</h5>
+                        <a class="btn btn-link text-white-50" href="">About Us</a>
+                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
+                        <a class="btn btn-link text-white-50" href="">Our Services</a>
+                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
+                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12">
+                        <h5 class="text-white mb-4 box-before">Subscribe</h5>
+                        <p>Join Our Mailing List & to get our news.</p>
+                        <div class="position-relative mx-auto">
+                            <input class="form-control bg-transparent w-100 py-3 ps-2 pe-5" type="text"
+                                   placeholder="your email address" style="font-size: 12px;color: white">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-0 me-0"
+                                    style="font-size: 14px;height: 100%">
+                                Subscribe
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-8 text-center text-md-start mb-3 mb-md-0">
+                        Copyright © <span class="text-primary">WhiteCollar</span> | Designed by VictorFlow Templates -
+                        Powered by Webflow
+                    </div>
+                    <div class="col-md-4 flex" style="gap: 5px">
+                        <div>
+                            Follow :
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                        <div>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+</div>
+
+<!-- JavaScript Libraries -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script th:src="@{/lib/wow/wow.min.js}"></script>
+<script th:src="@{/lib/easing/easing.min.js}"></script>
+<script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
+<script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
+
+
+<!-- Template Javascript -->
+<script th:src="@{/js/main.js}"></script>
+</body>
+
+</html>
