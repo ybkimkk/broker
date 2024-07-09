@@ -29,10 +29,6 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
 
-
-    <!-- font-awesome  -->
-    <link th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet">
-
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -73,7 +69,7 @@
                 <div class="icon p-2 me-2">
                     <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
                 </div>
-                <h1 class="m-0 text-primary">Makaan</h1>
+                <h1 class="m-0 text-primary">LOGO</h1>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -214,8 +210,8 @@
                 <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
                     <a class="cat-item d-block bg-light text-center rounded p-3" href="">
                         <div class="rounded p-4 " style="align-content: center;background: #00B98E">
-                            <h3 style="color: white">More Services <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                            </h3>
+                            <h4 style="color: white">More Services <i class="bi bi-arrow-right-circle"></i>
+                            </h4>
                         </div>
                     </a>
                 </div>
@@ -290,19 +286,18 @@
 
                 <div class="row mt-5 animated wow fadeInUp" data-wow-delay="0.7s">
                     <div class="col-md-6">
-                        <i class="fa fa-check-circle" aria-hidden="true"></i>
-                        2,800+ Active clients
+                        <i class="bi bi-check-circle-fill text-primary"></i> 2,800+ Active clients
                     </div>
                     <div class="col-md-6">
-                        <i class="fa fa-check-circle" aria-hidden="true"></i>
-                        106+
+                        <i class="bi bi-check-circle-fill  text-primary"></i> 106+
                     </div>
                 </div>
 
                 <div class="row mt-2  animated wow fadeInUp" data-wow-delay="0.8s">
                     <div class="col-md-6">
-                        <i class="fa fa-check-circle" aria-hidden="true"></i>
-                        1,670+ <span class="star">5 <i class="fa fa-star" aria-hidden="true"></i> stars</span>
+                        <i class="bi bi-check-circle-fill  text-primary"></i>
+                        1,670+ <span class="star">5
+                        <i class="bi bi-star-fill"></i> stars</span>
                         reviews
                     </div>
                     <div class="col-md-6">
@@ -338,9 +333,9 @@
     <!-- team End -->
 
     <!-- reply Start -->
-    <div class="container-xxl my-4">
+    <div class="container-xxl p-md-5 p-sm-0">
         <hr class="big-hr">
-        <div class="row">
+        <div class="row p-md-5 p-sm-0">
             <div class="col-md-4 col-sm-12">
                 <p class="box-before animated wow slideInLeft" data-wow-delay="0.1s">Testimonial</p>
                 <h2 class="mb-3  animated wow slideInLeft" data-wow-delay="0.2s">What Our Client Say’s</h2>
@@ -356,11 +351,11 @@
                             <h6 class="fw-bold mb-1">Nattasha Kelvin</h6>
                             <small>Designer</small>
                             <div class="star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
                             </div>
                         </div>
 
@@ -382,11 +377,11 @@
                             <h6 class="fw-bold mb-1">Cincinnati</h6>
                             <small>Designer</small>
                             <div class="star">
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
                             </div>
                         </div>
                     </div>
@@ -411,8 +406,8 @@
     </div>
 
     <!--form start-->
-    <div class="container-xxl  py-5">
-        <div class="row py-5" >
+    <div class="container-xxl  p-md-5  p-sm-0">
+        <div class="row mx-sm-0 mx-md-5 p-md-5 p-lg-5 p-sm-0">
             <div class="col-md-6">
                 <p class="box-before animated wow slideInLeft" data-wow-delay="0.1s">How We Work</p>
                 <h2 class="animated wow slideInLeft" data-wow-delay="0.2s">
@@ -489,6 +484,7 @@
                                             enableTime: true,
                                             noCalendar: true,
                                             dateFormat: "H:i",
+                                            time_24hr: true
                                         });
                                     });
                                 </script>
@@ -516,7 +512,7 @@
                 <div class="col-md-3 flex">
                     <div class="me-2">
                         <a class="btn btn-outline-light btn-social" href="javascript:void(0)">
-                            <i class="fa fa-phone"></i>
+                            <i class="bi bi-telephone-fill"></i>
                         </a>
                     </div>
                     <div>
@@ -527,7 +523,7 @@
                 <div class="col-md-3 flex">
                     <div class="me-2">
                         <a class="btn btn-outline-light btn-social" href="javascript:void(0)">
-                            <i class="fa fa-envelope"></i>
+                            <i class="bi bi-envelope"></i>
                         </a>
                     </div>
                     <div>
