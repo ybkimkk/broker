@@ -8,6 +8,31 @@
     --secondary: #FF6922;
     --light: #EFFDF5;
     --dark: #0E2E50;
+    --blue: #1090CB;
+}
+.close{
+    background: none;
+    border: none;
+}
+
+.primary-color {
+    color: var(--primary);;
+}
+
+.primary-bg-color {
+    background-color: var(--primary);;
+}
+
+.blue-color {
+    color: var(--blue);
+}
+
+.blue-bg-color {
+    background-color: var(--blue);
+}
+
+.input-bg-color {
+    background-color: #F6F6F6;
 }
 
 .big-hr {
