@@ -16,7 +16,7 @@ public class Home {
 
     @GetMapping
     public String index(HttpServletRequest request) {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("login")

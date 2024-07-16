@@ -4,13 +4,18 @@
 }
 
 :root {
-    --primary: #00B98E;
+    --primary: #1090CB;
     --secondary: #FF6922;
     --light: #EFFDF5;
     --dark: #0E2E50;
     --blue: #1090CB;
 }
-.close{
+
+/*.container-xxl {*/
+/*    background: rgba(249, 249, 249, 1);*/
+/*}*/
+
+.close {
     background: none;
     border: none;
 }
@@ -30,6 +35,18 @@
 .blue-bg-color {
     background-color: var(--blue);
 }
+
+.category-body {
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);;
+}
+.category-item{
+    min-height: 200px;
+}
+.category-item-text p,small {
+    color: #797979;
+}
+
 
 .input-bg-color {
     background-color: #F6F6F6;

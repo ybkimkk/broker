@@ -1,0 +1,32 @@
+<th:block th:fragment="carousel">
+<div class="container-xxl py-5 my-3">
+  <div class="carousel">
+    <th:block th:each="i : ${#numbers.sequence(1, 5)}">
+      <div class="carousel-cell d-flex align-items-center">
+        <img th:src="@{|/img/f//logo/0${i%3}.svg|}" alt="">
+      </div>
+    </th:block>
+    <!-- 继续添加轮播项 -->
+  </div>
+  <script>
+    let elem = document.querySelector('.carousel');
+    let flkty = new Flickity(elem, {
+      freeScroll: true,
+      contain: true,
+      prevNextButtons: false,
+      pageDots: false,
+      wrapAround: true
+    });
+
+    function autoScroll() {
+      flkty.x -= 1; // 每次滚动的距离，可以调整此值改变滚动速度
+      flkty.selectedIndex = flkty.dragEndRestingSelect(); // 更新索引
+      flkty.updateSelectedSlide(); // 更新当前选中项
+      flkty.settle(flkty.x); // 应用滚动位置
+    }
+
+    // 每20毫秒调用一次autoScroll，控制滚动速度
+    setInterval(autoScroll, 20);
+  </script>
+</div>
+</th:block>
