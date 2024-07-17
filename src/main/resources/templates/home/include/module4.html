@@ -1,9 +1,9 @@
-<th:block th:fragment="carousel">
+<th:block th:fragment="module4">
     <div class="container-xxl my-5">
         <div class="logo-carousel">
             <th:block th:each="i : ${#numbers.sequence(1, 15)}">
                 <div class="carousel-cell d-flex align-items-center">
-                    <img th:src="@{|/img/f//logo/0${i%3}.svg|}" alt="">
+                    <img th:src="@{|/img/module4/0${i%3}.svg|}" alt="">
                 </div>
             </th:block>
             <!-- 继续添加轮播项 -->
