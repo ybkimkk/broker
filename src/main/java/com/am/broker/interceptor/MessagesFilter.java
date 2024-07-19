@@ -2,7 +2,6 @@ package com.am.broker.interceptor;
 
 import com.am.broker.utils.MessageUtils;
 import com.am.broker.utils.ServletUtils;
-import org.springframework.context.i18n.LocaleContext;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
@@ -11,8 +10,11 @@ import java.io.IOException;
 import java.util.Locale;
 import java.util.Objects;
 
+/**
+ * @author jinyongbin
+ */
 @Component
-public class MessagesFiler implements Filter {
+public class MessagesFilter implements Filter {
 
     private static String lang = null;
     @Override
