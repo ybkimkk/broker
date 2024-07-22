@@ -199,7 +199,7 @@
     color: white;
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 16px;
     -webkit-appearance: none;
     /*-moz-appearance: none;*/
     /*appearance: none;*/
@@ -635,7 +635,7 @@
 
 .footer .btn.btn-link::before {
     position: relative;
-    content: "\f105";
+    /*content: "\f105";*/
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;

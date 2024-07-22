@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 @RequestMapping("/")
-public class Contact {
-    @GetMapping("contact")
+public class AboutUs {
+    @GetMapping("aboutus")
     public String contact(){
-        return "index";
+        return "home/index";
     }
 }

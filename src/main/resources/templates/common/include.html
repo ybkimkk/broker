@@ -3,7 +3,6 @@
     <meta charset="utf-8">
     <title>AM Broker</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<!--    <meta name="applicable-device" content="pc,mobile">-->
     <!-- Favicon -->
     <link href="/img/favicon.ico" rel="icon">
 
@@ -15,7 +14,7 @@
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link th:href="@{/lib/animate/animate.min.css}" rel="stylesheet">
@@ -27,7 +26,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>-->
-    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>
+    <!--    <script src="https://npmcdn.com/flatpickr/dist/flatpickr.min.js"></script>-->
     <!--    <script src="https://npmcdn.com/flatpickr/dist/l10n/ru.js"></script>-->
 
     <!-- Template Stylesheet -->
@@ -41,18 +40,37 @@
 
 <!--Lang start-->
 <th:block th:fragment="lang">
-    <i class="bi bi-globe text-white" style="font-size: 30px"></i>&nbsp;
+    <i class="bi bi-globe text-white" style="font-size: 24px"></i>&nbsp;
     <label>
         <select class="lang">
-            <option value="en" th:selected="${selectedLanguage == 'en'}">EN</option>
-            <option value="zh_CN" th:selected="${selectedLanguage == 'zh_CN'}">中文</option>
+            <option value="en" th:selected="${selectedLanguage == 'en'}">ENGLISH</option>
+            <option value="id" th:selected="${selectedLanguage == 'id'}">INDONESIA</option>
+            <option value="vn" th:selected="${selectedLanguage == 'vn'}">Tiếng Việt</option>
+            <option value="tc" th:selected="${selectedLanguage == 'tc'}">繁體中文</option>
+            <option value="cn" th:selected="${selectedLanguage == 'cn'}">简体中文</option>
+            <option value="korean" th:selected="${selectedLanguage == 'korean'}">한국어</option>
+            <option value="japanese" th:selected="${selectedLanguage == 'japanese'}">日本語</option>
+            <option value="arabic" th:selected="${selectedLanguage == 'arabic'}">بالعربية</option>
         </select>
     </label>
     <script>
         $(function () {
             $(".lang").change(function () {
-                Cookies.set('lang', $(this).val());
-                location.reload();
+                let selectedLang = $(this).val();
+
+                $.ajax({
+                    url: '/changeLanguage',
+                    type: 'POST',
+                    data: {lang: selectedLang},
+                    success: function (response) {
+                        // Optional: set cookie if server response is successful
+                        Cookies.set('lang', selectedLang);
+                        location.reload();
+                    },
+                    error: function () {
+                        alert('Language change failed!');
+                    }
+                });
             })
 
         });
@@ -63,12 +81,12 @@
 <!-- Menu start-->
 <th:block th:fragment="menu">
     <!-- Spinner Start -->
-<!--    <div id="spinner"-->
-<!--         class="show bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">-->
-<!--        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">-->
-<!--            <span class="sr-only">Loading...</span>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div id="spinner"
+         class="show bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
     <!-- Spinner End -->
 
     <div class="container-fluid  nav-bar" style="padding: 0">
@@ -85,7 +103,7 @@
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
             <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
                 <div class=" p-2 me-2">
-                    <img src="img/f/logo.png" alt="Icon" style="width: 50px;">
+                    <img src="/img/logo.png" alt="Icon" style="width: 50px;">
                 </div>
                 <h3 class="m-0 primary-color">AM-Broker</h3>
             </a>
@@ -94,39 +112,32 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About Us</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
+                    <a href="/aboutus" class="nav-item nav-link">About Us</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
+                        <a href="/products" class="nav-link dropdown-toggle">Products</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="property-list.html" class="dropdown-item">Property List</a>
-                            <a href="property-type.html" class="dropdown-item">Property Type</a>
-                            <a href="property-agent.html" class="dropdown-item">Property Agent</a>
+                            <a href="/forex" class="dropdown-item">Forex</a>
+                            <a href="/stock" class="dropdown-item">Stock</a>
+                            <a href="/cryptocurrency" class="dropdown-item">Cryptocurrency</a>
+                            <a href="/cfds" class="dropdown-item">CFDS</a>
+                            <a href="/metals" class="dropdown-item">Metals</a>
+                            <a href="/indices" class="dropdown-item">Indices</a>
+                            <a href="/commodities" class="dropdown-item">Commodities</a>
                         </div>
                     </div>
+                    <a href="/platform" class="nav-item nav-link">Platform</a>
+
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Trading Platforms</a>
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Account</a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partner Service</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
-                        <div class="dropdown-menu rounded-0 m-0">
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Error</a>
+                            <a href="https://office.am-broker.com/admin/login.php" target="_blank"
+                               class="dropdown-item">sign in</a>
+                            <a href="https://office.am-broker.com/admin/reg.php" target="_blank" class="dropdown-item">sign
+                                up</a>
                         </div>
                     </div>
                 </div>
-                <!--                <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Add Property</a>-->
             </div>
         </nav>
     </div>
@@ -138,12 +149,16 @@
 
 <!-- Footer Start -->
 <th:block th:fragment="footer">
-    <div class="container-fluid bg-dark text-white text-white-50 footer pt-5 mt-5 wow fadeIn px-lg-5"
-         data-wow-delay="0.1s">
+    <div class="container-fluid  text-white text-white-50 footer pt-5 mt-5 wow fadeIn px-lg-5"
+         data-wow-delay="0.1s" style="background: #37393F">
         <div class="container">
             <div class="row g-sm-1 g-2">
                 <div class="col-md-6 col-lg-3 d-flex align-items-center">
-                    <h4 class="text-white">AM-Broker</h4>
+                    <div class=" p-2 me-2">
+                        <img src="/img/logo.png" alt="Icon" style="width: 50px;">
+                    </div>
+                    <h3 class="m-0 text-white">AM-Broker</h3>
+
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-center">
                     <div class="me-lg-2">
@@ -153,7 +168,7 @@
                     </div>
                     <div>
                         <p class="m-0">Call Us</p>
-                        <small>+01 569 896 654</small>
+                        <small class="text-white">+852 3069 6811</small>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mt-md-3 d-flex align-items-center">
@@ -164,7 +179,7 @@
                     </div>
                     <div>
                         <p class="m-0">Mail Us</p>
-                        <small>Info@Example.com</small>
+                        <small class="text-white">support@am-broker.com</small>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mt-md-3 d-flex align-items-center">
@@ -175,7 +190,9 @@
                     </div>
                     <div>
                         <p class="m-0">Location</p>
-                        <small>Amsterdam, 109-74</small>
+                        <small class="text-white">FLAT 5,16/F HO KING COMMERCIAL CENTRE,
+                            2-16 FA YUEN STREET, MONG KOK,
+                            KOWLOON，HONG KONG</small>
                     </div>
                 </div>
             </div>
@@ -185,68 +202,66 @@
             <div class="copyright">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-4">
-                        <h5 class="box-before text-white mb-4">Quick Link</h5>
-                        <a class="btn btn-link text-white-50" href="">Home</a>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Blog</a>
-                        <a class="btn btn-link text-white-50" href="">Services</a>
-                        <a class="btn btn-link text-white-50" href="">Contact</a>
+                        <h5 class="box-before text-white mb-4">Transaction Information</h5>
+                        <a class="btn btn-link text-white-50" href="/products">Types of transactions</a>
+                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/login.php">Sign
+                            In</a>
+                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/reg.php">Sign
+                            Up</a>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h5 class="text-white mb-4 box-before">Our Services</h5>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                        <h5 class="text-white mb-4 box-before">Products</h5>
+                        <a class="btn btn-link text-white-50" href="/forex">Forex</a>
+                        <a class="btn btn-link text-white-50" href="/stock">Stock</a>
+                        <a class="btn btn-link text-white-50" href="/cryptocurrency">Cryptocurrency</a>
+                        <a class="btn btn-link text-white-50" href="/cfds">CFDS</a>
+                        <a class="btn btn-link text-white-50" href="/metals">Metals</a>
+                        <a class="btn btn-link text-white-50" href="/indices">Indices</a>
+                        <a class="btn btn-link text-white-50" href="/commodities">Commodities</a>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h5 class="text-white mb-4 box-before">Uitility Page</h5>
-                        <a class="btn btn-link text-white-50" href="">About Us</a>
-                        <a class="btn btn-link text-white-50" href="">Contact Us</a>
-                        <a class="btn btn-link text-white-50" href="">Our Services</a>
-                        <a class="btn btn-link text-white-50" href="">Privacy Policy</a>
-                        <a class="btn btn-link text-white-50" href="">Terms & Condition</a>
+                        <h5 class="text-white mb-4 box-before">About Us</h5>
+                        <a class="btn btn-link text-white-50" href="/aboutus">About Us</a>
                     </div>
 
                     <div class="col-lg-3 col-md-12">
-                        <h5 class="text-white mb-4 box-before">Subscribe</h5>
-                        <p>Join Our Mailing List & to get our news.</p>
-                        <div class="position-relative mx-auto">
-                            <input class="form-control bg-transparent w-100 py-3 ps-2 pe-5" type="text"
-                                   placeholder="your email address" style="font-size: 12px;color: white">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-0 me-0"
-                                    style="font-size: 14px;height: 100%">
-                                Subscribe
-                            </button>
-                        </div>
+                        <!--                        <h5 class="text-white mb-4 box-before">Subscribe</h5>-->
+                        <!--                        <p>Join Our Mailing List & to get our news.</p>-->
+                        <!--                        <div class="position-relative mx-auto">-->
+                        <!--                            <input class="form-control bg-transparent w-100 py-3 ps-2 pe-5" type="text"-->
+                        <!--                                   placeholder="your email address" style="font-size: 12px;color: white">-->
+                        <!--                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-0 me-0"-->
+                        <!--                                    style="font-size: 14px;height: 100%">-->
+                        <!--                                Subscribe-->
+                        <!--                            </button>-->
+                        <!--                        </div>-->
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="copyright">
-                <div class="d-flex align-items-center justify-content-between flex-sm-wrap">
-                    <div class=" mb-3 mb-md-0 align-items-center mb-md-3">
-                        Copyright © <span class="text-primary">WhiteCollar</span> | Designed by VictorFlow Templates -
+                <div class="row justify-content-between">
+                    <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white">
+                        Copyright © <span class="text-primary">WhiteCollar</span> | Designed by <span style="color: #6B77E5">VictorFlow</span>  Templates -
                         Powered by Webflow
                     </div>
-                    <div class="d-flex align-items-center mb-md-3">
-                        <div class="me-3">
-                            Follow :
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="bi bi-twitter"></i></a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="bi bi-facebook"></i></a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="bi bi-youtube"></i></a>
-                        </div>
-                        <div>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="bi bi-linkedin"></i></a>
-                        </div>
+                    <div class="col-lg-3 mb-md-3">
+                        <ul class="list-unstyled d-flex align-items-center justify-content-end">
+                            <li class="me-2">Follow :</li>
+                            <li>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -16,19 +16,12 @@ import java.util.Objects;
 @Component
 public class MessagesFilter implements Filter {
 
-    private static String lang = null;
+//    private static String lang = null;
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        // 初始化过滤器，例如加载配置文件或数据库连接
-        System.out.println("Filter initialized.");
+    public void init(FilterConfig filterConfig) {
     }
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        lang = ServletUtils.getCookie((HttpServletRequest) servletRequest, "lang");
-        if (Objects.isNull(lang)) {
-            lang = Locale.ENGLISH.getLanguage();
-        }
-        MessageUtils.setLanguage(lang);
         filterChain.doFilter(servletRequest, servletResponse);
     }
 }

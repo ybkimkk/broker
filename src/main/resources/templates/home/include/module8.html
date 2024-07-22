@@ -1,30 +1,89 @@
-<th:block th:fragment="module8">
-    <div class="container-fluid p-0 mt-3">
-        <div class="row g-3 mt-5">
-            <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.1s">
-                <div><img src="/img/f/introduce/1.png" style="width: 100%"></div>
-                <div class="px-5 text-center  mt-2">
-                    <small class="">Trade on consistently low spreads from 0.0 pips**</small>
+<th:block th:fragment="module">
+    <div class="container-fluid p-0 pt-5 mt-5">
+        <div class="mb-5">
+            <p class="text-center wow fadeIn" data-wow-delay="0.1s"><i class="box-before"></i>We Are Expertise In</p>
+            <h1 class="primary-color text-center wow slideInLeft" data-wow-delay="0.2s"><b>Top 10 Brokers in the world</b></h1>
+            <h5 class="primary-color text-center wow slideInRight" data-wow-delay="0.3s">(Statistics from 2017 to
+                present)</h5>
+        </div>
+        <div class="row g-0 mt-3 wow fadeIn" data-wow-delay="0.1s">
+            <div class="col-lg-8 col-sm-12 p-0">
+                <div class="d-flex align-items-center justify-content-center border" style="height: 150px">
+                    <div class="text-center">
+                        <small>Total transaction volume</small>
+                        <h1 class="mb-0">$<span id="number1"></span>+</h1>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-center border" style="height: 150px">
+                    <div class="text-center">
+                        <small>Total Exexution Orders</small>
+                        <h1 class="mb-0"><span id="number2"></span>+</h1>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.2s">
-                <div><img src="/img/f/introduce/2.png" style="width: 100%"></div>
-                <div class="px-5 text-center mt-2">
-                    <small>Fast execution froour server facility</small>
+            <div class="col-lg-4 col-sm-12 d-flex align-items-center justify-content-center flex-wrap p-0 gray-bg-color">
+                <div class="d-flex align-items-center justify-content-center" style="width: 50%;height: 150px">
+                    <div class="text-center">
+                        <img src="/img/module8/1.png" width="48" alt="">
+                        <b class="d-block fs-5"><span id="number3">254000</span>+</b>
+                        <p class="primary-color">Total Customers</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.3s">
-                <div><img src="/img/f/introduce/3.png" style="width: 100%"></div>
-                <div class="px-5 text-center  mt-2">
-                    <small>Top-tier liquidity and market leading pricing, 24/5</small>
+                <div class="d-flex align-items-center justify-content-center" style="width: 50%;height: 150px">
+                    <div class="text-center">
+                        <img src="/img/module8/2.png" width="48" alt="">
+                        <b class="d-block fs-5"><span id="number4">260000</span>+</b>
+                        <p class="primary-color">Partner</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.4s">
-                <div><img src="/img/f/introduce/4.png" style="width: 100%"></div>
-                <div class="px-5 text-center  mt-2">
-                    <small>No dealing desk and no requotes, ever</small>
+                <div class="d-flex align-items-center justify-content-center" style="width: 50%;height: 150px">
+                    <div class="text-center">
+                        <img src="/img/module8/3.png" width="48" alt="">
+                        <b class="d-block fs-5"><span id="number5">6500</span>+</b>
+                        <p class="primary-color">Online Salon</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center justify-content-center" style="width: 50%;height: 150px">
+                    <div class="text-center">
+                        <img src="/img/module8/4.png" width="48" alt="">
+                        <b class="d-block fs-5"><span id="number6">3400</span>+</b>
+                        <p class="primary-color">Offline Salons</p>
+                    </div>
                 </div>
             </div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-animateNumber/0.0.14/jquery.animateNumber.min.js"></script>
+        <!-- 自定义脚本 -->
+        <script>
+            $(document).ready(function () {
+                let comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',');
+                let options = {
+                    number: 1000,
+                    numberStep: comma_separator_number_step
+                }
+
+                let observer = new IntersectionObserver(function (entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            options.number = 20000000000
+                            $('#number1').animateNumber(options, 1500);
+                            options.number = 51000000
+                            $('#number2').animateNumber(options, 1500);
+                            options.number = 254000
+                            $('#number3').animateNumber(options, 2000);
+                            options.number = 260000
+                            $('#number4').animateNumber(options, 2000);
+                            options.number = 6500
+                            $('#number5').animateNumber(options, 2000);
+                            options.number = 3400
+                            $('#number6').animateNumber(options, 2000);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {threshold: 0.1});
+
+                observer.observe(document.querySelector('#number1'));
+            });
+        </script>
     </div>
 </th:block>

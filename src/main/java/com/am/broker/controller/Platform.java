@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class Platform {
-    @GetMapping("plat")
+    @GetMapping("platform")
     public String plat(){
-        return "index";
+        return "home/index";
     }
 }

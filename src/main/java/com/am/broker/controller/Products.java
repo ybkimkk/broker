@@ -13,38 +13,43 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/")
 public class Products {
+    @GetMapping("products")
+    public String products() {
+        return "home/index";
+    }
+
     @GetMapping("forex")
     public String forex() {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("stock")
     public String stock() {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("cryptocurrency")
     public String cryptocurrency() {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("cfds")
     public String cfds() {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("metals")
     public String metals() {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("indices")
     public String indices() {
-        return "index";
+        return "home/index";
     }
 
     @GetMapping("commodities")
     public String commodities() {
-        return "index";
+        return "home/index";
     }
 }
