@@ -91,7 +91,6 @@
 
     <div class="container-fluid  nav-bar" style="padding: 0">
         <div class="login-menu d-flex align-items-center justify-content-end">
-            <div><a href="/login">login</a></div>
             <div>
                 <th:block th:include="common/include :: lang"></th:block>
             </div>
@@ -112,29 +111,34 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="/" class="nav-item nav-link active">Home</a>
-                    <a href="/aboutus" class="nav-item nav-link">About Us</a>
+                    <a href="/" class="nav-item nav-link active" th:text="${menu['menu.home']}"></a>
+                    <a href="/aboutus" class="nav-item nav-link" th:text="${menu['menu.contact']}"></a>
                     <div class="nav-item dropdown">
-                        <a href="/products" class="nav-link dropdown-toggle">Products</a>
+                        <a href="/products" class="nav-link dropdown-toggle"
+                           th:text="${menu['menu.products']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="/forex" class="dropdown-item">Forex</a>
-                            <a href="/stock" class="dropdown-item">Stock</a>
-                            <a href="/cryptocurrency" class="dropdown-item">Cryptocurrency</a>
-                            <a href="/cfds" class="dropdown-item">CFDS</a>
-                            <a href="/metals" class="dropdown-item">Metals</a>
-                            <a href="/indices" class="dropdown-item">Indices</a>
-                            <a href="/commodities" class="dropdown-item">Commodities</a>
+                            <a href="/forex" class="dropdown-item" th:text="${menu['menu.products.forex']}"></a>
+                            <a href="/stock" class="dropdown-item" th:text="${menu['menu.products.stock']}"></a>
+                            <a href="/cryptocurrency" class="dropdown-item"
+                               th:text="${menu['menu.products.cryptocurrency']}"></a>
+                            <a href="/cfds" class="dropdown-item" th:text="${menu['menu.products.cfds']}"></a>
+                            <a href="/metals" class="dropdown-item" th:text="${menu['menu.products.metals']}"></a>
+                            <a href="/indices" class="dropdown-item"
+                               th:text="${menu['menu.products.indices']}"></a>
+                            <a href="/commodities" class="dropdown-item"
+                               th:text="${menu['menu.products.commodities']}"></a>
                         </div>
                     </div>
-                    <a href="/platform" class="nav-item nav-link">Platform</a>
+                    <a href="/platform" class="nav-item nav-link" th:text="${menu['menu.platform']}"></a>
 
                     <div class="nav-item dropdown">
-                        <a href="javascript:void(0)" class="nav-link dropdown-toggle">Account</a>
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle"
+                           th:text="${menu['menu.account']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
                             <a href="https://office.am-broker.com/admin/login.php" target="_blank"
-                               class="dropdown-item">sign in</a>
-                            <a href="https://office.am-broker.com/admin/reg.php" target="_blank" class="dropdown-item">sign
-                                up</a>
+                               class="dropdown-item" th:text="${menu['menu.account.login']}"></a>
+                            <a href="https://office.am-broker.com/admin/reg.php" target="_blank" class="dropdown-item"
+                               th:text="${menu['menu.account.register']}"></a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +153,7 @@
 
 <!-- Footer Start -->
 <th:block th:fragment="footer">
-    <div class="container-fluid  text-white text-white-50 footer pt-5 mt-5 wow fadeIn px-lg-5"
+    <div class="container-fluid  text-white text-white-50 footer pt-5 wow fadeIn px-lg-5"
          data-wow-delay="0.1s" style="background: #37393F">
         <div class="container">
             <div class="row g-sm-1 g-2">
@@ -167,7 +171,7 @@
                         </a>
                     </div>
                     <div>
-                        <p class="m-0">Call Us</p>
+                        <p class="m-0" th:text="${footer['footer.1']}"></p>
                         <small class="text-white">+852 3069 6811</small>
                     </div>
                 </div>
@@ -178,7 +182,7 @@
                         </a>
                     </div>
                     <div>
-                        <p class="m-0">Mail Us</p>
+                        <p class="m-0" th:text="${footer['footer.2']}"></p>
                         <small class="text-white">support@am-broker.com</small>
                     </div>
                 </div>
@@ -189,10 +193,8 @@
                         </a>
                     </div>
                     <div>
-                        <p class="m-0">Location</p>
-                        <small class="text-white">FLAT 5,16/F HO KING COMMERCIAL CENTRE,
-                            2-16 FA YUEN STREET, MONG KOK,
-                            KOWLOON，HONG KONG</small>
+                        <p class="m-0" th:text="${footer['footer.3.1']}"></p>
+                        <small class="text-white" th:text="${footer['footer.3.2']}"></small>
                     </div>
                 </div>
             </div>
@@ -202,26 +204,33 @@
             <div class="copyright">
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-4">
-                        <h5 class="box-before text-white mb-4">Transaction Information</h5>
-                        <a class="btn btn-link text-white-50" href="/products">Types of transactions</a>
-                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/login.php">Sign
-                            In</a>
-                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/reg.php">Sign
-                            Up</a>
+                        <h5 class="box-before text-white mb-4" th:text="${footer['footer.4.1']}">
+                            Information</h5>
+                        <a class="btn btn-link text-white-50" href="/products" th:text="${footer['footer.4.2']}"></a>
+                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/login.php"
+                           th:text="${menu['menu.account.login']}"></a>
+                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/reg.php"
+                           th:text="${menu['menu.account.register']}"></a>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h5 class="text-white mb-4 box-before">Products</h5>
-                        <a class="btn btn-link text-white-50" href="/forex">Forex</a>
-                        <a class="btn btn-link text-white-50" href="/stock">Stock</a>
-                        <a class="btn btn-link text-white-50" href="/cryptocurrency">Cryptocurrency</a>
-                        <a class="btn btn-link text-white-50" href="/cfds">CFDS</a>
-                        <a class="btn btn-link text-white-50" href="/metals">Metals</a>
-                        <a class="btn btn-link text-white-50" href="/indices">Indices</a>
-                        <a class="btn btn-link text-white-50" href="/commodities">Commodities</a>
+                        <h5 class="text-white mb-4 box-before" th:text="${menu['menu.products']}"></h5>
+                        <a class="btn btn-link text-white-50" href="/forex"
+                           th:text="${menu['menu.products.forex']}"></a>
+                        <a class="btn btn-link text-white-50" href="/stock"
+                           th:text="${menu['menu.products.stock']}"></a>
+                        <a class="btn btn-link text-white-50" href="/cryptocurrency"
+                           th:text="${menu['menu.products.cryptocurrency']}"></a>
+                        <a class="btn btn-link text-white-50" href="/cfds" th:text="${menu['menu.products.cfds']}"></a>
+                        <a class="btn btn-link text-white-50" href="/metals"
+                           th:text="${menu['menu.products.metals']}"></a>
+                        <a class="btn btn-link text-white-50" href="/indices"
+                           th:text="${menu['menu.products.indices']}"></a>
+                        <a class="btn btn-link text-white-50" href="/commodities"
+                           th:text="${menu['menu.products.commodities']}"></a>
                     </div>
                     <div class="col-lg-3 col-md-4">
-                        <h5 class="text-white mb-4 box-before">About Us</h5>
-                        <a class="btn btn-link text-white-50" href="/aboutus">About Us</a>
+                        <h5 class="text-white mb-4 box-before" th:text="${menu['menu.contact']}"></h5>
+                        <a class="btn btn-link text-white-50" href="/aboutus" th:text="${menu['menu.contact']}"></a>
                     </div>
 
                     <div class="col-lg-3 col-md-12">
@@ -242,24 +251,26 @@
         <div class="container">
             <div class="copyright">
                 <div class="row justify-content-between">
-                    <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white">
-                        Copyright © <span class="text-primary">WhiteCollar</span> | Designed by <span style="color: #6B77E5">VictorFlow</span>  Templates -
-                        Powered by Webflow
+                    <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white" th:html="${footer['footer.5']}">
                     </div>
                     <div class="col-lg-3 mb-md-3">
                         <ul class="list-unstyled d-flex align-items-center justify-content-end">
-                            <li class="me-2">Follow :</li>
+                            <li class="me-2" th:text="${footer['footer.6']}"></li>
                             <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-twitter"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
+                                        class="bi bi-twitter"></i></a>
                             </li>
                             <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-facebook"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
+                                        class="bi bi-facebook"></i></a>
                             </li>
                             <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-youtube"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
+                                        class="bi bi-youtube"></i></a>
                             </li>
                             <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i class="bi bi-linkedin"></i></a>
+                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
+                                        class="bi bi-linkedin"></i></a>
                             </li>
                         </ul>
                     </div>

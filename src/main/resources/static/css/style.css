@@ -103,6 +103,7 @@
     height: 60px;
 
 }
+
 .two-line-height {
     line-height: 1; /* 行高 */
     height: calc(1em * 2); /* 计算两行文字的高度 */
@@ -691,3 +692,21 @@
         min-width: 768px;
     }
 }
+
+
+.forex-number {
+    border-radius: 50%;
+    background: var(--blue);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    width: 35px;
+    height: 35px;
+
+}
+
+.forex-number p {
+    margin: auto;
+}
+

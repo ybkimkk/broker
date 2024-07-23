@@ -1,28 +1,28 @@
 <th:block th:fragment="module">
     <div class="container-fluid p-0 mt-3">
-        <div class="row g-3 mt-5">
+        <div class="row g-0 g-lg-3 mt-5">
             <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.1s">
-                <div><img src="/img/module7/1.png" style="width: 100%"></div>
+                <div><img src="/img/home/module7/1.png" style="width: 100%"></div>
                 <div class="px-5 text-center  mt-2">
-                    <small class="">Trade on consistently low spreads from 0.0 pips**</small>
+                    <small th:text="${home['home.module7.1']}"></small>
                 </div>
             </div>
             <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.2s">
-                <div><img src="/img/module7/2.png" style="width: 100%"></div>
+                <div><img src="/img/home/module7/2.png" style="width: 100%"></div>
                 <div class="px-5 text-center mt-2">
-                    <small>Fast execution froour server facility</small>
+                    <small th:text="${home['home.module7.2']}"></small>
                 </div>
             </div>
             <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.3s">
-                <div><img src="/img/module7/3.png" style="width: 100%"></div>
+                <div><img src="/img/home/module7/3.png" style="width: 100%"></div>
                 <div class="px-5 text-center  mt-2">
-                    <small>Top-tier liquidity and market leading pricing, 24/5</small>
+                    <small th:text="${home['home.module7.3']}"></small>
                 </div>
             </div>
             <div class="col-md-3 col-sm-12 wow slideInUp" data-wow-delay="0.4s">
-                <div><img src="/img/module7/4.png" style="width: 100%"></div>
+                <div><img src="/img/home/module7/4.png" style="width: 100%"></div>
                 <div class="px-5 text-center  mt-2">
-                    <small>No dealing desk and no requotes, ever</small>
+                    <small th:text="${home['home.module7.4']}"></small>
                 </div>
             </div>
         </div>

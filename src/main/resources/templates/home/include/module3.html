@@ -1,39 +1,29 @@
 <!-- bg Start -->
 <th:block th:fragment="module">
     <div class="container-fluid  p-0 mt-2">
-        <div class="bg1" style="background-image: url('/img/module3/bg1.png');">
+        <div class="bg1" style="background-image: url('/img/home/module3/bg1.png');">
             <div class="bg1-content p-lg-5 p-3">
-                <h1 class="green-color  wow slideInLeft" data-wow-delay="0.1s">Trade With A Leading Global Provider</h1>
-                <h4 class="d-inline-block text-white border-bottom pb-3 wow slideInLeft" data-wow-delay="0.2s">
-                    5reasons why AM Broker have the best trading platform
-                </h4>
+                <h1 class="green-color  wow slideInLeft" data-wow-delay="0.1s" th:text="${home['home.module3.1']}"></h1>
+                <h4 class="d-inline-block text-white border-bottom pb-3 wow slideInLeft" data-wow-delay="0.2s"
+                    th:text="${home['home.module3.2']}"></h4>
                 <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.1s">
-                    <h5 class="green-color">Global Requlation</h5>
-                    <small class="d-block text-white" style=" max-width: 550px">
-                        requlation is a maior factor in deciding on a trustworthy broker and as a Global forex
-                        broker with some of the most stringent regulation , you will receive competitive
-                        pricing , segregated client funds as well as fair resolution in the unlikely event of any issue.
+                    <h5 class="green-color" th:text="${home['home.module3.3']}"></h5>
+                    <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.4']}">
                     </small>
                 </div>
-                <div class="mt-lg-5 mt-3 wow slideInLeft"  data-wow-delay="0.2s">
-                    <h5 class="green-color">Tighter Spreads Faster Execution</h5>
-                    <small class="d-block text-white" style=" max-width: 550px">
-                        requlation is a maior factor in deciding on a trustworthy broker and as a Global forex
-                        broker with some of the most stringent regulation , you will receive competitive
-                        pricing , segregated client funds as well as fair resolution in the unlikely event of any issue.
+                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.2s">
+                    <h5 class="green-color" th:text="${home['home.module3.5']}"></h5>
+                    <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.6']}">
                     </small>
                 </div>
-                <div class="mt-lg-5 mt-3 wow slideInLeft"  data-wow-delay="0.1s">
-                    <h5 class="green-color">24/5 Mulyi-Language Support</h5>
-                    <small class="d-block text-white" style=" max-width: 550px">
-                        have a dedicated customer support team and personal account manager . You wil
-                        always receive the latest market updates and support through social media channels
+                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.1s">
+                    <h5 class="green-color" th:text="${home['home.module3.7']}"></h5>
+                    <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.8']}">
                     </small>
                 </div>
-                <div class="mt-lg-5 mt-3 wow slideInLeft"  data-wow-delay="0.2s">
-                    <h5 class="green-color">Safer System</h5>
-                    <small class="d-block text-white" style=" max-width: 550px">
-                        Real-time updated security system
+                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.2s">
+                    <h5 class="green-color" th:text="${home['home.module3.9']}">Safer System</h5>
+                    <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.10']}">
                     </small>
                 </div>
             </div>

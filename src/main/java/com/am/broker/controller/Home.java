@@ -1,3 +1,4 @@
+
 package com.am.broker.controller;
 
 
@@ -8,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.Map;
 
 /**
  * @author jinyongbin
@@ -17,15 +19,11 @@ import javax.servlet.http.HttpServletRequest;
 public class Home extends CommonController {
 
     @GetMapping
-    public String index(HttpServletRequest request, Model model) {
-//        String message = MessageUtils.message("menu.home");
+    public String index(Model model) {
+        Map<String, String> home = MessageUtils.searchMessages("home");
+        model.addAttribute("home", home);
         return "home/index";
     }
-//
-//    @GetMapping("login")
-//    public String login() {
-//        return "login";
-//    }
 
 
     @PostMapping("changeLanguage")

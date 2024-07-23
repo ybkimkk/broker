@@ -1,10 +1,12 @@
 <th:block th:fragment="module">
     <div class="container-fluid p-0 pt-5 mt-5">
         <div class="mb-5">
-            <p class="text-center wow slideInUp" data-wow-delay="0.1s"><i class="box-before"></i>We Are Expertise In</p>
-            <h1 class=" text-center wow slideInLeft" data-wow-delay="0.2s"><b>6 Reasons to Choose Us</b></h1>
-            <h5 class=" text-center wow slideInRight mt-2" data-wow-delay="0.3s">
-                A Global Forex Broker
+            <p class="text-center wow slideInUp" data-wow-delay="0.1s"><span class="box-before"
+                                                                             th:text="${home['home.module9.1']}"></span>
+            </p>
+            <h1 class=" text-center wow slideInLeft" data-wow-delay="0.2s"><b th:text="${home['home.module9.2']}"></b>
+            </h1>
+            <h5 class=" text-center wow slideInRight mt-2" data-wow-delay="0.3s" th:text="${home['home.module9.3']}">
             </h5>
         </div>
         <div class="row justify-content-center">
@@ -14,14 +16,14 @@
                         <div class="gray-bg-color p-3">
                             <div class="d-flex align-items-center ">
                                 <div class="flex-fill">
-                                    <p class="mb-3"><b>Globally Segregated</b></p>
+                                    <p class="mb-3"><b th:text="${home['home.module9.4.1']}"></b></p>
                                 </div>
                                 <div class="d-flex text-white justify-content-center align-items-center m10-icon">
                                     <i class="fs-3 bi bi-bank"></i>
                                 </div>
                             </div>
                             <div class="two-line-height mt-2">
-                                <small class="primary-color"><b>Lient Funds</b></small>
+                                <small class="primary-color"><b th:text="${home['home.module9.4.2']}"></b></small>
                             </div>
                         </div>
                     </div>
@@ -29,14 +31,14 @@
                         <div class="gray-bg-color p-3">
                             <div class="d-flex align-items-center">
                                 <div class="flex-fill">
-                                    <p class="mb-3"><b>Tighter Spreads</b></p>
+                                    <p class="mb-3"><b th:text="${home['home.module9.5.1']}"></b></p>
                                 </div>
                                 <div class="d-flex text-white justify-content-center align-items-center m10-icon">
                                     <i class="fs-3 bi bi-bar-chart"></i>
                                 </div>
                             </div>
                             <div class="two-line-height mt-2">
-                                <small class="primary-color"><b>Market lead ing spreads from 0.0 pips24/5</b></small>
+                                <small class="primary-color"><b th:text="${home['home.module9.5.2']}"></b></small>
                             </div>
                         </div>
                     </div>
@@ -44,14 +46,14 @@
                         <div class="gray-bg-color p-3">
                             <div class="d-flex align-items-center">
                                 <div class="flex-fill">
-                                    <p class="mb-3"><b>Faster Execution</b></p>
+                                    <p class="mb-3"><b th:text="${home['home.module9.6.1']}"></b></p>
                                 </div>
                                 <div class="d-flex text-white justify-content-center align-items-center m10-icon">
                                     <i class="fs-3 bi bi-file-earmark-code"></i>
                                 </div>
                             </div>
                             <div class="two-line-height  mt-2">
-                                <small class="primary-color"><b>Low latency, ultra-fast execution trade</b></small>
+                                <small class="primary-color"><b th:text="${home['home.module9.6.2']}"></b></small>
                             </div>
                         </div>
                     </div>
@@ -59,14 +61,14 @@
                         <div class="gray-bg-color p-3">
                             <div class="d-flex align-items-center">
                                 <div class="flex-fill">
-                                    <p class="mb-3"><b>Advanced Platforms</b></p>
+                                    <p class="mb-3"><b th:text="${home['home.module9.7.1']}"></b></p>
                                 </div>
                                 <div class="d-flex text-white justify-content-center align-items-center m10-icon">
                                     <i class="fs-3 bi bi-building"></i>
                                 </div>
                             </div>
                             <div class="two-line-height  mt-2">
-                                <small class="primary-color"><b>MT4 superior client portal</b></small>
+                                <small class="primary-color"><b th:text="${home['home.module9.7.2']}"></b></small>
                             </div>
                         </div>
                     </div>
@@ -74,14 +76,14 @@
                         <div class="gray-bg-color p-3">
                             <div class="d-flex align-items-center">
                                 <div class="flex-fill">
-                                    <p class="mb-3"><b>24/5 Multilingual Customer Support</b></p>
+                                    <p class="mb-3"><b th:text="${home['home.module9.8.1']}"></b></p>
                                 </div>
                                 <div class="d-flex text-white justify-content-center align-items-center m10-icon">
                                     <i class="fs-3 bi bi-patch-check"></i>
                                 </div>
                             </div>
                             <div class="two-line-height  mt-2">
-                                <small class="primary-color"><b>Award winning support &personal accourt managers</b></small>
+                                <small class="primary-color"><b th:text="${home['home.module9.8.2']}"></b></small>
                             </div>
                         </div>
                     </div>
@@ -89,14 +91,14 @@
                         <div class="gray-bg-color p-3">
                             <div class="d-flex align-items-center">
                                 <div class="flex-fill">
-                                    <p class="mb-3"><b>Safer System</b></p>
+                                    <p class="mb-3"><b th:text="${home['home.module9.9.1']}"></b></p>
                                 </div>
                                 <div class="d-flex text-white justify-content-center align-items-center m10-icon">
                                     <i class="fs-3 bi-gear-fill"></i>
                                 </div>
                             </div>
                             <div class="two-line-height mt-2">
-                                <small class="primary-color"><b>MReal-time updated security system</b></small>
+                                <small class="primary-color"><b th:text="${home['home.module9.9.2']}"></b></small>
                             </div>
                         </div>
                     </div>
