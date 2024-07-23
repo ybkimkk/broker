@@ -114,9 +114,13 @@
                     <a href="/" class="nav-item nav-link active" th:text="${menu['menu.home']}"></a>
                     <a href="/aboutus" class="nav-item nav-link" th:text="${menu['menu.contact']}"></a>
                     <div class="nav-item dropdown">
-                        <a href="/products" class="nav-link dropdown-toggle"
+                        <a href="/products" class="nav-link dropdown-toggle show-on-pc"
                            th:text="${menu['menu.products']}"></a>
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
+                           data-bs-toggle="dropdown" th:text="${menu['menu.products']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/products" class="dropdown-item show-on-mobile"
+                               th:text="${menu['menu.products']}"></a>
                             <a href="/forex" class="dropdown-item" th:text="${menu['menu.products.forex']}"></a>
                             <a href="/stock" class="dropdown-item" th:text="${menu['menu.products.stock']}"></a>
                             <a href="/cryptocurrency" class="dropdown-item"
@@ -127,6 +131,9 @@
                                th:text="${menu['menu.products.indices']}"></a>
                             <a href="/commodities" class="dropdown-item"
                                th:text="${menu['menu.products.commodities']}"></a>
+                            <a href="/commodities" class="dropdown-item"
+                               th:text="${menu['menu.products.commodities']}"></a>
+
                         </div>
                     </div>
                     <a href="/platform" class="nav-item nav-link" th:text="${menu['menu.platform']}"></a>
@@ -251,7 +258,8 @@
         <div class="container">
             <div class="copyright">
                 <div class="row justify-content-between">
-                    <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white" th:html="${footer['footer.5']}">
+                    <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white"
+                         th:html="${footer['footer.5']}">
                     </div>
                     <div class="col-lg-3 mb-md-3">
                         <ul class="list-unstyled d-flex align-items-center justify-content-end">
