@@ -1,37 +1,77 @@
 <th:block th:fragment="module">
-    <div class="container-fluid p-0 mb-5">
-        <div class="bg1 show-on-pc wow fadeIn" data-wow-delay="0.1s"
-             style="background-image: url('/img/forex/module5/1.png');padding-top: 30%">
-<!--            <div class="p-5" style="position: relative;left: 0;width: 100%;background: rgba(0,0,0,.3)">-->
-<!--                <div style="width: 60%">-->
-<!--                    <h3 class="box-before text-white" th:text="${home['home.module5.1']}"></h3>-->
-<!--                    <p class="text-white" th:text="${home['home.module5.2']}"></p>-->
-<!--                </div>-->
-<!--            </div>-->
-        </div>
-        <div class="row g-0 p-0 wow fadeInUp" data-wow-delay="0.2s">
-<!--            <div class="col-lg-4 p-2">-->
-<!--                <div class="primary-bg-color text-white p-4">-->
-<!--                    <h5 class="text-white" th:text="${home['home.module5.3.1']}"></h5>-->
-<!--                    <h3 class="text-white" th:text="${home['home.module5.3.2']}"></h3>-->
-<!--                    <p th:text="${home['home.module5.3.3']}"></p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 p-2">-->
-<!--                <div class="primary-bg-color text-white p-4">-->
-<!--                    <h5 class="text-white" th:text="${home['home.module5.4.1']}"></h5>-->
-<!--                    <h3 class="text-white" th:text="${home['home.module5.4.2']}"></h3>-->
-<!--                    <p th:text="${home['home.module5.4.3']}"></p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <div class="col-lg-4 p-2">-->
-<!--                <div class="primary-bg-color text-white p-4">-->
-<!--                    <h5 class="text-white" th:text="${home['home.module5.5.1']}"></h5>-->
-<!--                    <h3 class="text-white" th:text="${home['home.module5.5.2']}"></h3>-->
-<!--                    <p  th:text="${home['home.module5.5.3']}"></p>-->
-<!--                </div>-->
-<!--            </div>-->
+    <style>
+        .flickity-button {
+            background: var(--blue);
+            overflow: hidden;
+            font-size: 12px;
+        }
 
+        .flickity-button:hover {
+            background: var(--green);
+        }
+
+        .flickity-prev-next-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        /* icon color */
+        .flickity-button-icon {
+            fill: white;
+            width: 30% !important;
+            left: 50% !important;
+            top: 50% !important;
+            transform: translate(-50%, -50%) !important;
+        }
+
+        /* position outside */
+        .flickity-prev-next-button.previous {
+            left: 40px;
+        }
+
+        .flickity-prev-next-button.next {
+            right: 40px;
+        }
+
+        .cell {
+            width: 100%;
+        }
+
+        .cell img {
+            max-width: 500px;
+        }
+    </style>
+    <div class="container-fluid p-0 mb-5">
+        <div class="carousel" data-flickity>
+            <div class="cell row g-0 justify-content-center py-5">
+                <div class="col-lg-6 text-center">
+                    <h1>Forex Pairs and Quotes</h1>
+                    <img class="m-auto mb-5" src="/img/stock/module5/1.png" alt="">
+                    <p>Currencies being traded are listed in pairs, such as USD/CAD, EUR/ USD, Or USD/JPYThese represent
+                        the U.S. dollar (USD) versus the Canadian dollar (CAD),
+                        the Euro(EUR) versus the USD, and the USD versus the Japanese Yen (JPY).</p>
+                </div>
+            </div>
+            <div class="cell row g-0 justify-content-center py-5">
+                <div class="col-lg-6 text-center">
+                    <h1>Forex Pairs and Quotes</h1>
+                    <img class="m-auto mb-5" src="/img/stock/module5/1.png" alt="">
+                    <p>There will also be a price associated with each pair such as 1.2569. lf this price wasassociated
+                        with the UsD/CAD pair it means that it costs
+                        1.2569 CAD to buy one USD.If the price increases to 1.3336, it now costs 1.3336 CAD to buy one
+                        UsD. The USDhas increased
+                        in value (the CAD has decreased) as it now costs more CAD to buy one USD</p>
+                </div>
+            </div>
         </div>
     </div>
+    <script>
+        let elem = document.querySelector('.carousel');
+        new Flickity(elem, {
+            draggable: false,
+            pageDots: false,
+            wrapAround: true
+        });
+    </script>
 </th:block>

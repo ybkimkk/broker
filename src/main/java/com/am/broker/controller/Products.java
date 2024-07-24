@@ -18,46 +18,52 @@ import java.util.Map;
 @RequestMapping("/")
 public class Products {
     @GetMapping("products")
-    public String products() {
+    public String products(Model model) {
+        Map<String, String> home = MessageUtils.searchMessages("home");
+        model.addAttribute("home", home);
         return "home/index";
     }
 
     @GetMapping("forex")
     public String forex(Model model) {
-        Map<String, String> home = MessageUtils.searchMessages("home");
-        model.addAttribute("home", home);
         Map<String, String> forex = MessageUtils.searchMessages("forex");
         model.addAttribute("forex", forex);
         return "forex/index";
     }
 
     @GetMapping("stock")
-    public String stock() {
-        return "home/index";
+    public String stock(Model model) {
+        Map<String, String> forex = MessageUtils.searchMessages("forex");
+        model.addAttribute("forex", forex);
+        Map<String, String> stock = MessageUtils.searchMessages("stock");
+        model.addAttribute("stock", stock);
+        return "stock/index";
     }
 
     @GetMapping("cryptocurrency")
-    public String cryptocurrency() {
-        return "home/index";
+    public String cryptocurrency(Model model) {
+//        Map<String, String> forex = MessageUtils.searchMessages("forex");
+//        model.addAttribute("forex", forex);
+        return "cryptocurrency/index";
     }
 
     @GetMapping("cfds")
-    public String cfds() {
-        return "home/index";
+    public String cfds(Model model) {
+        return "cfds/index";
     }
 
     @GetMapping("metals")
-    public String metals() {
+    public String metals(Model model) {
         return "home/index";
     }
 
     @GetMapping("indices")
-    public String indices() {
+    public String indices(Model model) {
         return "home/index";
     }
 
     @GetMapping("commodities")
-    public String commodities() {
+    public String commodities(Model model) {
         return "home/index";
     }
 }

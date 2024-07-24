@@ -710,3 +710,27 @@
     margin: auto;
 }
 
+.banner-bg-img img {
+    width: 100%
+}
+.banner-bg-img  button {
+    width: 300px
+}
+
+
+.banner-bg-img > div {
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.banner-bg-img h1 {
+    /*text-transform: uppercase;*/
+    font-size: 80px;
+    letter-spacing: 10px;
+}
+
+.banner-bg-img b {
+    font-size: 24px;
+}
+

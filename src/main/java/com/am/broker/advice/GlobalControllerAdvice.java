@@ -24,6 +24,8 @@ public class GlobalControllerAdvice {
         model.addAttribute("menu", menu);
         Map<String, String> footer = MessageUtils.searchMessages("footer");
         model.addAttribute("footer", footer);
+        Map<String, String> common = MessageUtils.searchMessages("common");
+        model.addAttribute("common", common);
         model.addAttribute("selectedLanguage", lang);
     }
 }
