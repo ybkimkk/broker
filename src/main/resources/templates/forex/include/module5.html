@@ -46,22 +46,16 @@
         <div class="carousel" data-flickity>
             <div class="cell row g-0 justify-content-center py-5">
                 <div class="col-lg-6 text-center">
-                    <h1>Forex Pairs and Quotes</h1>
-                    <img class="m-auto mb-5" src="/img/stock/module5/1.png" alt="">
-                    <p>Currencies being traded are listed in pairs, such as USD/CAD, EUR/ USD, Or USD/JPYThese represent
-                        the U.S. dollar (USD) versus the Canadian dollar (CAD),
-                        the Euro(EUR) versus the USD, and the USD versus the Japanese Yen (JPY).</p>
+                    <h1 th:text="${forex['forex.module5.1']}">Forex Pairs and Quotes</h1>
+                    <img class="m-auto mb-5" src="/img/forex/module5/1.png" alt="">
+                    <p th:text="${forex['forex.module5.2']}"></p>
                 </div>
             </div>
             <div class="cell row g-0 justify-content-center py-5">
                 <div class="col-lg-6 text-center">
-                    <h1>Forex Pairs and Quotes</h1>
-                    <img class="m-auto mb-5" src="/img/stock/module5/1.png" alt="">
-                    <p>There will also be a price associated with each pair such as 1.2569. lf this price wasassociated
-                        with the UsD/CAD pair it means that it costs
-                        1.2569 CAD to buy one USD.If the price increases to 1.3336, it now costs 1.3336 CAD to buy one
-                        UsD. The USDhas increased
-                        in value (the CAD has decreased) as it now costs more CAD to buy one USD</p>
+                    <h1 th:text="${forex['forex.module5.1']}">Forex Pairs and Quotes</h1>
+                    <img class="m-auto mb-5" src="/img/forex/module5/1.png" alt="">
+                    <p th:text="${forex['forex.module5.3']}"></p>
                 </div>
             </div>
         </div>
