@@ -3,10 +3,7 @@ package com.am.broker.utils;
 import cn.hutool.core.util.StrUtil;
 import com.am.broker.spring.SpringUtils;
 import org.springframework.context.MessageSource;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -37,15 +34,8 @@ public class MessageUtils {
     }
 
     public static Locale getCurrentLocale() {
-        Locale locale = CURRENT_LOCALE.get();
-        if (locale == null) {
-            ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-            HttpServletRequest request = attributes.getRequest();
-            String lang = ServletUtils.getCookie(request, "lang");
-            locale = new Locale(StrUtil.isNotBlank(lang) ? lang : "en");
-            CURRENT_LOCALE.set(locale);
-        }
-        return CURRENT_LOCALE.get();
+        String lang = ServletUtils.getCookie(ServletUtils.getRequest(), "lang");
+        return new Locale(StrUtil.isNotBlank(lang) ? lang : "en");
     }
 
     // 在需要更新语言的地方调用此方法

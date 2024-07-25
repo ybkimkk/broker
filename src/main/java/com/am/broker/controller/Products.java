@@ -33,8 +33,6 @@ public class Products {
 
     @GetMapping("stock")
     public String stock(Model model) {
-        Map<String, String> forex = MessageUtils.searchMessages("forex");
-        model.addAttribute("forex", forex);
         Map<String, String> stock = MessageUtils.searchMessages("stock");
         model.addAttribute("stock", stock);
         return "stock/index";
@@ -42,13 +40,15 @@ public class Products {
 
     @GetMapping("cryptocurrency")
     public String cryptocurrency(Model model) {
-//        Map<String, String> forex = MessageUtils.searchMessages("forex");
-//        model.addAttribute("forex", forex);
+        Map<String, String> cryptocurrency = MessageUtils.searchMessages("cryptocurrency");
+        model.addAttribute("cryptocurrency", cryptocurrency);
         return "cryptocurrency/index";
     }
 
     @GetMapping("cfds")
     public String cfds(Model model) {
+        Map<String, String> cfds = MessageUtils.searchMessages("cfds");
+        model.addAttribute("cfds", cfds);
         return "cfds/index";
     }
 
