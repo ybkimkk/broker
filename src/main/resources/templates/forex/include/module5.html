@@ -36,24 +36,25 @@
 
         .cell {
             width: 100%;
+            height: 600px;
         }
 
         .cell img {
             max-width: 500px;
         }
     </style>
-    <div class="container-fluid p-0 mb-5">
-        <div class="carousel" data-flickity>
-            <div class="cell row g-0 justify-content-center py-5">
+    <div class="container-fluid row g-0 justify-content-center p-0">
+        <div class="forex-carousel col-lg-10">
+            <div class="cell row g-0 justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h1 th:text="${forex['forex.module5.1']}">Forex Pairs and Quotes</h1>
+                    <h1 class="mb-4" th:text="${forex['forex.module5.1']}">Forex Pairs and Quotes</h1>
                     <img class="m-auto mb-5" src="/img/forex/module5/1.png" alt="">
                     <p th:text="${forex['forex.module5.2']}"></p>
                 </div>
             </div>
-            <div class="cell row g-0 justify-content-center py-5">
+            <div class="cell row g-0 justify-content-center">
                 <div class="col-lg-6 text-center">
-                    <h1 th:text="${forex['forex.module5.1']}">Forex Pairs and Quotes</h1>
+                    <h1 class="mb-4" th:text="${forex['forex.module5.1']}">Forex Pairs and Quotes</h1>
                     <img class="m-auto mb-5" src="/img/forex/module5/1.png" alt="">
                     <p th:text="${forex['forex.module5.3']}"></p>
                 </div>
@@ -61,11 +62,11 @@
         </div>
     </div>
     <script>
-        let elem = document.querySelector('.carousel');
-        new Flickity(elem, {
+        let flickity = $('.forex-carousel').flickity({
             draggable: false,
             pageDots: false,
             wrapAround: true
         });
+        flickity.resize();
     </script>
 </th:block>
