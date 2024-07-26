@@ -1,13 +1,11 @@
 <!-- banner Start -->
 <th:block th:fragment="module">
-    <div class="container-fluid header bg-white p-0 mt-2 show-on-pc">
+    <div class="container-fluid header p-0 mt-2 show-on-pc">
         <div class="position-relative banner-bg-img">
             <img src="/img/forex/module1/1.png" alt="">
             <div class="position-absolute">
                 <h1 class="text-white" th:text="${menu['menu.products.forex']}"></h1>
-                <button class="btn btn-primary">
-                    <b class="text-white mb-0" th:text="${common['common.startTrading']}">START TRADING</b>
-                </button>
+                <th:block th:include="common/include :: trading"></th:block>
             </div>
         </div>
     </div>

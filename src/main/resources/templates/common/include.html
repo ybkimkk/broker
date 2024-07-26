@@ -253,7 +253,7 @@
             <div class="copyright">
                 <div class="row justify-content-between">
                     <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white"
-                         th:html="${footer['footer.5']}">
+                         th:utext="${footer['footer.5']}">
                     </div>
                     <div class="col-lg-3 mb-md-3">
                         <ul class="list-unstyled d-flex align-items-center justify-content-end">
@@ -285,6 +285,14 @@
 </th:block>
 <!-- Footer End -->
 
+<!-- Trading Start -->
+<th:block th:fragment="trading">
+    <a href="https://office.am-broker.com/admin/login.php" class="btn btn-primary d-block" target="_blank">
+        <b class="text-white mb-0" style="font-size: 24px"  th:text="${common['common.startTrading']}"></b>
+    </a>
+</th:block>
+<!-- Trading End -->
+
 <!-- Javascript Start -->
 <th:block th:fragment="js">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -296,3 +304,6 @@
     <script th:src="@{/js/main.js}"></script>
 </th:block>
 <!-- Javascript End -->
+
+
+

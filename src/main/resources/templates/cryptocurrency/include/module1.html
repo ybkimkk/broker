@@ -5,9 +5,7 @@
             <img src="/img/cryptocurrency/module1/1.png" alt="">
             <div class="position-absolute">
                 <h1 class="text-white" th:text="${menu['menu.products.cryptocurrency']}"></h1>
-                <button class="btn btn-primary">
-                    <b class="text-white mb-0" th:text="${common['common.startTrading']}"></b>
-                </button>
+                <th:block th:include="common/include :: trading"></th:block>
             </div>
         </div>
     </div>
