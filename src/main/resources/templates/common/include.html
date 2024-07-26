@@ -38,13 +38,13 @@
     <label>
         <select class="lang">
             <option value="en" th:selected="${selectedLanguage == 'en'}">ENGLISH</option>
-            <option value="id" th:selected="${selectedLanguage == 'id'}">INDONESIA</option>
+            <option value="in" th:selected="${selectedLanguage == 'in'}">INDONESIA</option>
             <option value="vn" th:selected="${selectedLanguage == 'vn'}">Tiếng Việt</option>
             <option value="tc" th:selected="${selectedLanguage == 'tc'}">繁體中文</option>
             <option value="cn" th:selected="${selectedLanguage == 'cn'}">简体中文</option>
-            <option value="korean" th:selected="${selectedLanguage == 'korean'}">한국어</option>
-            <option value="japanese" th:selected="${selectedLanguage == 'japanese'}">日本語</option>
-            <option value="arabic" th:selected="${selectedLanguage == 'arabic'}">بالعربية</option>
+            <option value="ko" th:selected="${selectedLanguage == 'ko'}">한국어</option>
+            <option value="jp" th:selected="${selectedLanguage == 'jp'}">日本語</option>
+            <option value="ar" th:selected="${selectedLanguage == 'ar'}">بالعربية</option>
         </select>
     </label>
     <script>
@@ -125,9 +125,6 @@
                                th:text="${menu['menu.products.indices']}"></a>
                             <a href="/commodities" class="dropdown-item"
                                th:text="${menu['menu.products.commodities']}"></a>
-                            <a href="/commodities" class="dropdown-item"
-                               th:text="${menu['menu.products.commodities']}"></a>
-
                         </div>
                     </div>
                     <a href="/platform" class="nav-item nav-link" th:text="${menu['menu.platform']}"></a>
