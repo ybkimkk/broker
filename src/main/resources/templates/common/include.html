@@ -306,4 +306,19 @@
 <!-- Javascript End -->
 
 
+<!-- sub-page banner -->
+<th:block th:fragment="subBanner(src,text)">
+    <div class="container-fluid header p-0 mt-2 show-on-pc">
+        <div class="position-relative banner-bg-img">
+            <img th:src="${src}" alt="">
+            <div class="position-absolute">
+                <h1 class="text-white" th:text="${text}"></h1>
+                <th:block th:include="common/include :: trading"></th:block>
+            </div>
+        </div>
+    </div>
+</th:block>
+<!-- sub-page end -->
+
+
 

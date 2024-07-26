@@ -2,26 +2,26 @@
 <th:block th:fragment="module">
     <div class="container-fluid  p-0 mt-2 show-on-pc">
         <div class="bg1" style="background-image: url('/img/home/module3/bg1.png');">
-            <div class="bg1-content p-lg-5 p-3">
+            <div class="bg1-content p-lg-3 p-3">
                 <h1 class="green-color  wow slideInLeft" data-wow-delay="0.1s" th:text="${home['home.module3.1']}"></h1>
                 <h4 class="d-inline-block text-white border-bottom pb-3 wow slideInLeft" data-wow-delay="0.2s"
                     th:text="${home['home.module3.2']}"></h4>
-                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.1s">
+                <div class="mt-3 wow slideInLeft" data-wow-delay="0.1s">
                     <h5 class="green-color" th:text="${home['home.module3.3']}"></h5>
                     <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.4']}">
                     </small>
                 </div>
-                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.2s">
+                <div class="mt-3 wow slideInLeft" data-wow-delay="0.2s">
                     <h5 class="green-color" th:text="${home['home.module3.5']}"></h5>
                     <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.6']}">
                     </small>
                 </div>
-                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.1s">
+                <div class="mt-3 wow slideInLeft" data-wow-delay="0.1s">
                     <h5 class="green-color" th:text="${home['home.module3.7']}"></h5>
                     <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.8']}">
                     </small>
                 </div>
-                <div class="mt-lg-5 mt-3 wow slideInLeft" data-wow-delay="0.2s">
+                <div class="mt-3 wow slideInLeft" data-wow-delay="0.2s">
                     <h5 class="green-color" th:text="${home['home.module3.9']}">Safer System</h5>
                     <small class="d-block text-white" style=" max-width: 550px" th:text="${home['home.module3.10']}">
                     </small>
@@ -32,6 +32,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const img = new Image();
+            img.src = '/img/home/module3/bg1.png';
             img.onload = function () {
                 console.log("Image loaded", this.width, this.height);
                 const div = document.querySelector('.bg1');
@@ -40,7 +41,7 @@
             img.onerror = function () {
                 console.error("Failed to load image");
             };
-            img.src = '/img/home/module3/bg1.png';
+
         });
 
     </script>
