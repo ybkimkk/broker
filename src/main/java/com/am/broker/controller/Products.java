@@ -54,7 +54,16 @@ public class Products {
 
     @GetMapping("metals")
     public String metals(Model model) {
-        return "home/index";
+        Map<String, String> metals = MessageUtils.searchMessages("metals");
+        model.addAttribute("metals", metals);
+
+        String reasons = MessageUtils.message("home.module9.2");
+        model.addAttribute("reasons", reasons);
+
+        Map<String, String> home = MessageUtils.searchMessages("home.module9");
+        model.addAttribute("home", home);
+
+        return "metals/index";
     }
 
     @GetMapping("indices")
