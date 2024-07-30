@@ -1,8 +1,5 @@
-
 package com.am.broker.controller;
 
-
-import com.am.broker.controller.common.CommonController;
 import com.am.broker.utils.MessageUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +12,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/")
-public class Home extends CommonController {
+public class Home {
 
     @GetMapping
     public String index(Model model) {
@@ -23,7 +20,6 @@ public class Home extends CommonController {
         model.addAttribute("home", home);
         return "home/index";
     }
-
 
     @PostMapping("changeLanguage")
     @ResponseBody

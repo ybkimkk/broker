@@ -20,12 +20,6 @@
 
 .bg1 {
     position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio (height / width * 100%) */
-    background-size: 100% auto;
-    /*background-position: center;*/
-    background-repeat: no-repeat;
-    /* 确保图片覆盖整个 div */
 }
 
 .bg1 .bg1-content {

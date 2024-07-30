@@ -1,7 +1,8 @@
 <!-- bg Start -->
 <th:block th:fragment="module">
     <div class="container-fluid  p-0 mt-2 show-on-pc">
-        <div class="bg1" style="background-image: url('/img/home/module3/bg1.png');">
+        <div class="bg1">
+            <img src="/img/home/module3/bg1.png" style="width: 100%;position: relative" alt="">
             <div class="bg1-content p-lg-3 p-3">
                 <h1 class="green-color  wow slideInLeft" data-wow-delay="0.1s" th:text="${home['home.module3.1']}"></h1>
                 <h4 class="d-inline-block text-white border-bottom pb-3 wow slideInLeft" data-wow-delay="0.2s"
@@ -29,21 +30,5 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const img = new Image();
-            img.src = '/img/home/module3/bg1.png';
-            img.onload = function () {
-                console.log("Image loaded", this.width, this.height);
-                const div = document.querySelector('.bg1');
-                div.style.height = `${this.height}px`;
-            };
-            img.onerror = function () {
-                console.error("Failed to load image");
-            };
-
-        });
-
-    </script>
 </th:block>
 <!-- bg End -->
