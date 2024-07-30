@@ -284,7 +284,7 @@
 
 <!-- Trading Start -->
 <th:block th:fragment="trading">
-    <a href="https://office.am-broker.com/admin/login.php" class="btn btn-primary d-block" target="_blank">
+    <a  href="https://office.am-broker.com/admin/login.php" class="btn btn-primary d-block wow fadeIn" target="_blank">
         <b class="text-white mb-0" style="font-size: 24px"  th:text="${common['common.startTrading']}"></b>
     </a>
 </th:block>
@@ -309,7 +309,7 @@
         <div class="position-relative banner-bg-img">
             <img th:src="${src}" alt="">
             <div class="position-absolute">
-                <h1 class="text-white" th:text="${text}"></h1>
+                <h1 class="text-white wow fadeIn" th:text="${text}"></h1>
                 <th:block th:include="common/include :: trading"></th:block>
             </div>
         </div>
