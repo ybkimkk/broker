@@ -1,6 +1,7 @@
 /********** Template CSS **********/
 * {
-    font-family: "Arial", sans-serif !important;
+    /*font-family: "Arial", sans-serif !important;*/
+    font-family: "Roboto", sans-serif;
 }
 
 :root {
