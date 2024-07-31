@@ -68,11 +68,15 @@ public class Products {
 
     @GetMapping("indices")
     public String indices(Model model) {
-        return "home/index";
+        Map<String, String> indices = MessageUtils.searchMessages("indices");
+        model.addAttribute("indices", indices);
+        return "indices/index";
     }
 
     @GetMapping("commodities")
     public String commodities(Model model) {
-        return "home/index";
+        Map<String, String> commodities = MessageUtils.searchMessages("commodities");
+        model.addAttribute("commodities", commodities);
+        return "commodities/index";
     }
 }
