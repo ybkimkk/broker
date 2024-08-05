@@ -20,6 +20,13 @@ public class Platform {
     public String plat(Model model){
         Map<String, String> home = MessageUtils.searchMessages("home");
         model.addAttribute("home", home);
-        return "home/index";
+
+        Map<String, String> platform = MessageUtils.searchMessages("platform");
+        model.addAttribute("platform", platform);
+
+
+        Map<String, String> metals = MessageUtils.searchMessages("metals");
+        model.addAttribute("metals", metals);
+        return "platform/index";
     }
 }

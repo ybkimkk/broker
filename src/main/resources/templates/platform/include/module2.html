@@ -1,0 +1,21 @@
+<!-- Category Start -->
+<th:block th:fragment="module">
+    <div class="container-fluid my-5">
+        <div class="row g-0 justify-content-center text-center mx-auto mb-5">
+            <div class="col-lg-11 col-12 ">
+                <div class="category-body row g-0 p-lg-5" style="background: #EEF4FA">
+                    <img src="/img/platform/module2/1.png" style="width: auto;margin: auto" alt="">
+                    <h2 class="mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <b th:text="${platform['platform.module2.1']}"></b>
+                    </h2>
+                    <h5 class="mb-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <b th:text="${platform['platform.module2.2']}"></b>
+                    </h5>
+                    <p><b th:text="${platform['platform.module2.3']}"></b></p>
+                    <p th:utext="${platform['platform.module2.4']}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+<!-- Category End -->

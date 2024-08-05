@@ -1,0 +1,18 @@
+<!-- Category Start -->
+<th:block th:fragment="module">
+    <div class="container-fluid header p-0 mt-2 show-on-pc">
+        <div class="position-relative banner-bg-img">
+            <img th:src="@{/img/platform/module1/1.png}" alt="">
+            <div class="position-absolute w-100" style="left: 0;">
+                <h1 class="fs-1 text-white text-center wow fadeIn" th:text="${platform['platform.module1.1']}"></h1>
+                <div style="padding:0 20%">
+                    <p class="fs-3 text-white text-center wow fadeIn" th:text="${platform['platform.module1.2']}"></p>
+                </div>
+              <div class="w-100 text-center">
+                  <button class="fs-3 mt-4 btn btn-primary wow fadeIn" th:text="${home['home.module10.8']}"></button>
+              </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+<!-- Category End -->
