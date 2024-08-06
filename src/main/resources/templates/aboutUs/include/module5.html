@@ -1,0 +1,17 @@
+<!-- Category Start -->
+<th:block th:fragment="module">
+    <div class="container-fluid header p-0 mt-2 show-on-pc">
+        <div class="position-relative banner-bg-img">
+            <img th:src="@{/img/aboutUs/module5/1.png}" alt="">
+            <div class="position-absolute py-3 px-5" style="left: 0;width: 45%">
+                <h1 style="font-size: 48px"  class=" wow fadeIn" th:text="${aboutUs['aboutUs.module5.1']}"></h1>
+                <div>
+                    <h5 class="wow fadeIn" th:text="${aboutUs['aboutUs.module5.2']}"></h5>
+                    <p class=" wow fadeIn" th:text="${aboutUs['aboutUs.module5.3']}" style="color: black"></p>
+                    <button class="btn btn-primary wow fadeIn"  th:text="${aboutUs['aboutUs.module5.4']}"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+<!-- Category End -->
