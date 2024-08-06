@@ -35,7 +35,7 @@
 
 <!--Lang start-->
 <th:block th:fragment="lang">
-    <i class="bi bi-globe text-white" style="font-size: 24px"></i>&nbsp;
+    <i class="bi bi-globe text-white" style="font-size: 24px"></i>&nbsp;   <i class="bi bi-chevron-down text-white"></i>
     <label>
         <select class="lang">
             <option value="en" th:selected="${selectedLanguage == 'en'}">ENGLISH</option>
@@ -47,7 +47,9 @@
             <option value="jp" th:selected="${selectedLanguage == 'jp'}">日本語</option>
             <option value="ar" th:selected="${selectedLanguage == 'ar'}">بالعربية</option>
         </select>
+
     </label>
+
     <script>
         $(function () {
             $(".lang").change(function () {
@@ -300,7 +302,7 @@
 
 <!-- Trading Start -->
 <th:block th:fragment="trading">
-    <a href="https://office.am-broker.com/admin/login.php" class="btn btn-primary d-block wow fadeIn" target="_blank">
+    <a href="https://office.am-broker.com/admin/login.php" class="btn btn-primary wow fadeIn px-5 " target="_blank">
         <b class="text-white mb-0" style="font-size: 24px" th:text="${common['common.startTrading']}"></b>
     </a>
 </th:block>

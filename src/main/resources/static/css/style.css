@@ -723,7 +723,8 @@
 .banner-bg-img h1 {
     /*text-transform: uppercase;*/
     font-size: 80px;
-    letter-spacing: 10px;
+    margin-bottom: 20px;
+    /*letter-spacing: 10px;*/
 }
 
 

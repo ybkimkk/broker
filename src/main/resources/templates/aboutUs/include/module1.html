@@ -1,0 +1,17 @@
+<!-- Category Start -->
+<th:block th:fragment="module">
+    <div class="container-fluid header p-0 mt-2 show-on-pc">
+        <div class="position-relative banner-bg-img">
+            <img th:src="@{/img/aboutUs/module1/1.png}" alt="">
+            <div class="position-absolute w-75 py-3 px-5" style="left: 0;background: rgba(0,0,0,0.5)">
+                <h1 style="font-size: 48px"  class="text-white wow fadeIn" th:text="${menu['menu.contact']}"></h1>
+                <div >
+                    <p class="text-white wow fadeIn" th:text="${aboutUs['aboutUs.module1.1']}"></p>
+                    <p class="text-white wow fadeIn" th:text="${aboutUs['aboutUs.module1.2']}"></p>
+                    <p class="text-white wow fadeIn" th:text="${aboutUs['aboutUs.module1.3']}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+<!-- Category End -->

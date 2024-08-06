@@ -18,8 +18,8 @@ import java.util.Map;
 public class AboutUs {
     @GetMapping("aboutus")
     public String contact(Model model){
-        Map<String, String> home = MessageUtils.searchMessages("home");
-        model.addAttribute("home", home);
-        return "home/index";
+        Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
+        model.addAttribute("aboutUs", aboutUs);
+        return "aboutUs/index";
     }
 }
