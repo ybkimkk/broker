@@ -14,12 +14,19 @@ import java.util.Map;
  * @since 2024/7/15
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/aboutUs")
 public class AboutUs {
-    @GetMapping("aboutus")
+    @GetMapping
     public String contact(Model model){
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         model.addAttribute("aboutUs", aboutUs);
         return "aboutUs/index";
+    }
+
+    @GetMapping("/item1")
+    public String aboutUs1(Model model){
+        Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
+        model.addAttribute("aboutUs", aboutUs);
+        return "aboutUs/item1/index";
     }
 }
