@@ -41,6 +41,9 @@
 .gray-bg-color {
     background: var(--gray);
 }
+.gray-dark-bg-color {
+    background: #EBEBEB;
+}
 
 .primary-color {
     color: var(--primary);
