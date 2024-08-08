@@ -79,8 +79,8 @@ public class Products {
 
         Map<String, String> home = MessageUtils.searchMessages("home");
         model.addAttribute("home", home);
-
-        Object table1 = JSON.parse(JsonConstant.table1);
+        String message = MessageUtils.message("indices.module7.table1");
+        Object table1 = JSON.parse(message);
         model.addAttribute("table1", table1);
 
         return "indices/index";
