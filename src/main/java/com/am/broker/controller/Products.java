@@ -68,6 +68,9 @@ public class Products {
 
     @GetMapping("indices")
     public String indices(Model model) {
+        Map<String, String> metals = MessageUtils.searchMessages("metals");
+        model.addAttribute("metals", metals);
+
         Map<String, String> indices = MessageUtils.searchMessages("indices");
         model.addAttribute("indices", indices);
         return "indices/index";
