@@ -1,40 +1,38 @@
-<!-- bg Start -->
 <th:block th:fragment="module">
-    <div class="container  p-0 my-5">
-        <h1 class="text-center mb-5"><b th:text="${metals['metals.module7.1']}"></b></h1>
+    <div class="container p-0 mt-5">
         <div class="row g-0 justify-content-center">
-            <div class="col-lg-9 col-12">
-                <div class="row g-0 justify-content-center">
-                    <div class="col-lg-6 col-12 p-2 wow slideInLeft" data-wow-delay="01.s">
-                        <img src="/img/metals/module7/1.png" style="width: 100%" alt="">
-                    </div>
-                    <div class="col-lg-6 col-12 p-2">
-                        <div class="d-flex wow slideInRight" data-wow-delay="0.1s">
-                            <h3 class="primary-color pe-4">01</h3>
-                            <p th:text="${metals['metals.module7.2']}"></p>
-                        </div>
-                        <hr/>
-                        <div class="d-flex wow slideInRight" data-wow-delay="0.2s">
-                            <h3 class="primary-color pe-4">02</h3>
-                            <p th:text="${metals['metals.module7.3']}"></p>
-                        </div>
-                        <hr/>
-                        <div class="d-flex wow slideInRight" data-wow-delay="0.3s">
-                            <h3 class="primary-color pe-4">03</h3>
-                            <p th:text="${metals['metals.module7.4']}"></p>
-                        </div>
-                        <hr/>
-                        <div class="d-flex wow slideInRight" data-wow-delay="0.4s">
-                            <h3 class="primary-color pe-4">04</h3>
-                            <p th:text="${metals['metals.module7.5']}"></p>
-                        </div>
-                        <hr/>
-                    </div>
+            <div class="col-lg-10 col-12 py-lg-5 p-3 pb-lg-0">
+                <h1 class="text-center mb-lg-5" th:text="${indices['indices.module7.1']}"></h1>
+                <table class="table table-striped table-bordered border-1">
+                    <thead class="indices-table">
+                    <tr>
+                        <th rowspan="2" th:text="${indices['indices.module7.1.1']}">Symbols</th>
+                        <th rowspan="2" th:text="${indices['indices.module7.1.2']}">Products</th>
+                        <th colspan="2" th:text="${indices['indices.module7.1.3']}">Standard Account</th>
+                        <th colspan="2" th:text="${indices['indices.module7.1.4']}">ECN Account</th>
+                    </tr>
+                    <tr>
+                        <th th:text="${indices['indices.module7.1.5']}">Min</th>
+                        <th th:text="${indices['indices.module7.1.6']}">Average</th>
+                        <th th:text="${indices['indices.module7.1.7']}">Minimum</th>
+                        <th th:text="${indices['indices.module7.1.8']}">Average</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="item :${table1}">
+                        <tr>
+                            <td class="text-center" th:text="${item.Symbols}"></td>
+                            <td class="text-center" th:text="${item.Products}"></td>
+                            <td class="text-center" th:text="${item.StandardMin}"></td>
+                            <td class="text-center" th:text="${item.StandardAverage}"></td>
+                            <td class="text-center" th:text="${item.ECNMin}"></td>
+                            <td class="text-center" th:text="${item.ECNAverage}"></td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
 
-
-                </div>
             </div>
         </div>
     </div>
 </th:block>
-<!-- bg End -->

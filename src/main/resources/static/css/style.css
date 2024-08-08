@@ -41,6 +41,7 @@
 .gray-bg-color {
     background: var(--gray);
 }
+
 .gray-dark-bg-color {
     background: #EBEBEB;
 }
@@ -712,7 +713,8 @@
 .banner-bg-img img {
     width: 100%
 }
-.banner-bg-img  button {
+
+.banner-bg-img button {
     width: 300px
 }
 
@@ -730,4 +732,19 @@
     /*letter-spacing: 10px;*/
 }
 
+.indices-table {
+
+}
+
+.indices-table th {
+    /*display: flex;*/
+    /*justify-content: center;*/
+    align-items: center;
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    /*border: 1px solid white;*/
+    padding: 10px 0;
+    vertical-align: middle;
+}
 

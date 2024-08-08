@@ -1,5 +1,8 @@
 package com.am.broker.controller;
 
+import com.alibaba.fastjson2.JSON;
+import com.alibaba.fastjson2.JSONObject;
+import com.am.broker.constant.JsonConstant;
 import com.am.broker.utils.MessageUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -73,6 +76,13 @@ public class Products {
 
         Map<String, String> indices = MessageUtils.searchMessages("indices");
         model.addAttribute("indices", indices);
+
+        Map<String, String> home = MessageUtils.searchMessages("home");
+        model.addAttribute("home", home);
+
+        Object table1 = JSON.parse(JsonConstant.table1);
+        model.addAttribute("table1", table1);
+
         return "indices/index";
     }
 
