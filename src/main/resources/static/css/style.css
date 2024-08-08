@@ -673,7 +673,7 @@
     border-right: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 865px) {
     .show-on-pc {
         display: none;
     }
@@ -683,7 +683,7 @@
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 865px) {
     .show-on-mobile {
         display: none;
     }

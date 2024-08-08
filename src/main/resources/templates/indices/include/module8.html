@@ -1,0 +1,29 @@
+
+<th:block th:fragment="module">
+    <div class="container-fluid my-5">
+        <div class="row g-0 justify-content-center text-center mx-auto mb-5">
+            <div class="col-lg-11 col-12 ">
+                <div class="category-body row g-0 p-lg-5" style="background: #EEF4FA">
+
+                    <div class="row g-0 justify-content-around align-items-center mb-5 wow slideInLeft"
+                         data-wow-delay="0.1s">
+                        <div class="col-12 show-on-mobile mb-3">
+                            <img src="/img/indices/module8/1.png" style="width: 100%" alt="">
+                        </div>
+                        <div class="col-lg-5 col-12 text-start px-1">
+                            <h2 class="mb-3 wow fadeInUp mb-5" data-wow-delay="0.1s">
+                                <b th:text="${indices['indices.module8.1']}"></b>
+                            </h2>
+                            <p style="line-height: 36px" th:text="${indices['indices.module8.2']}"></p>
+                            <p style="line-height: 36px" th:text="${indices['indices.module8.3']}"></p>
+                        </div>
+                        <div class="col-5 show-on-pc">
+                            <img src="/img/indices/module8/1.png" style="width: 100%" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</th:block>
+
