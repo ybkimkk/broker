@@ -23,10 +23,10 @@
                         <tr>
                             <td class="text-center" th:text="${item.Symbols}"></td>
                             <td class="text-center" th:text="${item.Products}"></td>
-                            <td class="text-center" th:text="${item.StandardMin}"></td>
-                            <td class="text-center" th:text="${item.StandardAverage}"></td>
-                            <td class="text-center" th:text="${item.ECNMin}"></td>
-                            <td class="text-center" th:text="${item.ECNAverage}"></td>
+                            <td class="text-center"><b th:text="${item.StandardMin}" style="color: red"></b></td>
+                            <td class="text-center" style="color: red" th:text="${item.StandardAverage}"></td>
+                            <td class="text-center" ><b th:text="${item.ECNMin}" style="color: green"></b></td>
+                            <td class="text-center" th:text="${item.ECNAverage}" style="color: green"></td>
                         </tr>
                     </th:block>
                     </tbody>
