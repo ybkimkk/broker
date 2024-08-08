@@ -29,4 +29,11 @@ public class AboutUs {
         model.addAttribute("aboutUs", aboutUs);
         return "aboutUs/item1/index";
     }
+
+    @GetMapping("/item2")
+    public String aboutUs2(Model model){
+        Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
+        model.addAttribute("aboutUs", aboutUs);
+        return "aboutUs/item2/index";
+    }
 }
