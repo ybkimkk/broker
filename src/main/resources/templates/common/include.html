@@ -42,11 +42,12 @@
                                                                                              th:text="${languageMap.get(selectedLanguageKey)}">ENGLISH</span>
         </button>
         <ul class="dropdown-menu " style="z-index: 1000">
-                <li th:each="language : ${languageMap.entrySet()}" th:attrappend="class=${selectedLanguageKey == language.getKey() ? ' active' : ''}"
-                    class="dropdown-item border-0 text-black-50"
-                    th:onclick="selectLanguage([[${language.getKey()}]], this)">
-                    <span th:text="${language.getValue()}"></span>
-                </li>
+            <li th:each="language : ${languageMap.entrySet()}"
+                th:attrappend="class=${selectedLanguageKey == language.getKey() ? ' active' : ''}"
+                class="dropdown-item border-0 text-black-50"
+                th:onclick="selectLanguage([[${language.getKey()}]], this)">
+                <span th:text="${language.getValue()}"></span>
+            </li>
         </ul>
     </div>
     <script>
@@ -270,6 +271,13 @@
             </div>
         </div>
     </div>
+    <!--    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">-->
+    <!--        <i class="bi bi-whatsapp"></i>-->
+    <!--    </button>-->
+
+    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us">
+        <i class="bi bi-whatsapp"></i>
+    </button>
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     <!-- Back to Top -->
 </th:block>

@@ -87,6 +87,15 @@
     margin-bottom: 100px; /* 上下边距 */
 }
 
+.contact-us {
+    position: fixed;
+    /*display: none;*/
+    right: 105px;
+    bottom: 45px;
+    z-index: 99;
+}
+
+
 .back-to-top {
     position: fixed;
     display: none;
