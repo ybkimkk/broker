@@ -30,6 +30,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </th:block>
 <!--Head end-->
 
@@ -93,7 +95,22 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
                     <a href="/" class="nav-item nav-link menu-home" th:text="${menu['menu.home']}"></a>
-                    <a href="/aboutUs" class="nav-item nav-link menu-aboutUs" th:text="${menu['menu.contact']}"></a>
+                    <div class="nav-item dropdown">
+                        <a href="/aboutUs" class="nav-link dropdown-toggle menu-aboutUs show-on-pc"
+                           th:text="${menu['menu.contact']}"></a>
+                        <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
+                           data-bs-toggle="dropdown" th:text="${menu['menu.contact']}"></a>
+                        <div class="dropdown-menu rounded-0 m-0">
+                            <a href="/products" class="dropdown-item menu-products show-on-mobile"
+                               th:text="${menu['menu.products']}"></a>
+                            <a href="/forex" class="dropdown-item menu-forex"
+                               th:text="${menu['menu.contact.tradingMarkets']}"></a>
+                            <a href="/stock" class="dropdown-item menu-stock"
+                               th:text="${menu['menu.contact.tradingMethods']}"></a>
+                            <a href="/cryptocurrency" class="dropdown-item menu-cryptocurrency"
+                               th:text="${menu['menu.contact.tradingAccounts']}"></a>
+                        </div>
+                    </div>
                     <div class="nav-item dropdown">
                         <a href="/products" class="nav-link dropdown-toggle menu-products show-on-pc"
                            th:text="${menu['menu.products']}"></a>
@@ -271,11 +288,19 @@
             </div>
         </div>
     </div>
-    <!--    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">-->
-    <!--        <i class="bi bi-whatsapp"></i>-->
-    <!--    </button>-->
-
-    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us">
+    <script>
+        $(document).ready(function () {
+            // Initialize the popover
+            $('[data-toggle="popover"]').popover({
+                html: true, // Allow HTML content
+                // title: "Popover title",
+                content: '<img src="https://via.placeholder.com/150" alt="Sample Image" class="img-fluid">',
+                trigger: 'click' // Show popover on click
+            });
+        });
+    </script>
+    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us" data-placement="top"
+            data-toggle="popover">
         <i class="bi bi-whatsapp"></i>
     </button>
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -294,7 +319,6 @@
 <!-- Javascript Start -->
 <th:block th:fragment="js">
     <!--    <script th:src="@{/bootstrap-4.6.2-dist/js/bootstrap.bundle.min.js}"></script>-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script th:src="@{/lib/wow/wow.min.js}"></script>
     <script th:src="@{/lib/easing/easing.min.js}"></script>

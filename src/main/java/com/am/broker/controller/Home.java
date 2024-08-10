@@ -3,9 +3,9 @@ package com.am.broker.controller;
 import com.am.broker.utils.MessageUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -22,9 +22,8 @@ public class Home {
         return "home/index";
     }
 
-    @PostMapping("changeLanguage")
-    @ResponseBody
-    public void changeLanguage(@RequestParam("lang") String lang) {
-         MessageUtils.updateLanguage(lang);
+    @GetMapping("test")
+    public String test() {
+        return "test";
     }
 }
