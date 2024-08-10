@@ -32,6 +32,18 @@
           rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script>
+        $(document).ready(function () {
+            // Initialize the popover
+            $('[data-toggle="popover"]').popover({
+                html: true, // Allow HTML content
+                // title: "Popover title",
+                content: '<img src="https://via.placeholder.com/150" alt="Sample Image" class="img-fluid">',
+                trigger: 'click' // Show popover on click
+            });
+        });
+    </script>
+
 </th:block>
 <!--Head end-->
 
@@ -101,14 +113,14 @@
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
                            data-bs-toggle="dropdown" th:text="${menu['menu.contact']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="/products" class="dropdown-item menu-products show-on-mobile"
-                               th:text="${menu['menu.products']}"></a>
-                            <a href="/forex" class="dropdown-item menu-forex"
+                            <a href="/aboutUs" class="dropdown-item menu-products show-on-mobile"
+                               th:text="${menu['menu.contact']}"></a>
+                            <a href="/tradingMarkets" class="dropdown-item menu-tradingMarkets"
                                th:text="${menu['menu.contact.tradingMarkets']}"></a>
-                            <a href="/stock" class="dropdown-item menu-stock"
-                               th:text="${menu['menu.contact.tradingMethods']}"></a>
-                            <a href="/cryptocurrency" class="dropdown-item menu-cryptocurrency"
-                               th:text="${menu['menu.contact.tradingAccounts']}"></a>
+<!--                            <a href="/methods" class="dropdown-item menu-tradingMethods"-->
+<!--                               th:text="${menu['menu.contact.tradingMethods']}"></a>-->
+<!--                            <a href="/accounts" class="dropdown-item menu-tradingAccounts"-->
+<!--                               th:text="${menu['menu.contact.tradingAccounts']}"></a>-->
                         </div>
                     </div>
                     <div class="nav-item dropdown">
@@ -288,17 +300,6 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function () {
-            // Initialize the popover
-            $('[data-toggle="popover"]').popover({
-                html: true, // Allow HTML content
-                // title: "Popover title",
-                content: '<img src="https://via.placeholder.com/150" alt="Sample Image" class="img-fluid">',
-                trigger: 'click' // Show popover on click
-            });
-        });
-    </script>
     <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us" data-placement="top"
             data-toggle="popover">
         <i class="bi bi-whatsapp"></i>

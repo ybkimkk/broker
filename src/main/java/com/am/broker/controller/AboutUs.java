@@ -14,9 +14,9 @@ import java.util.Map;
  * @since 2024/7/15
  */
 @Controller
-@RequestMapping("/aboutUs")
+@RequestMapping
 public class AboutUs {
-    @GetMapping
+    @GetMapping("aboutUs")
     public String contact(Model model){
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         model.addAttribute("aboutUs", aboutUs);
@@ -30,10 +30,10 @@ public class AboutUs {
         return "aboutUs/item1/index";
     }
 
-    @GetMapping("/item2")
-    public String aboutUs2(Model model){
+    @GetMapping("/tradingMarkets")
+    public String tradingMarkets(Model model){
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         model.addAttribute("aboutUs", aboutUs);
-        return "aboutUs/item2/index";
+        return "tradingMarkets/index";
     }
 }
