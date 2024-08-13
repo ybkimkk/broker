@@ -1,8 +1,43 @@
-
 <th:block th:fragment="module">
-    <div class="container-fluid mt-lg-5 my-5">
-        <div class="row g-0 justify-content-center text-center mx-auto mb-5">
-
+    <div id="download" class="container-fluid mt-lg-5 my-5">
+        <div class="row g-0 justify-content-center mx-auto mb-5">
+            <div class="col-11 gray-bg-color p-lg-5">
+                <div class="row g-0">
+                    <div class="col-lg-6">1</div>
+                    <div class="col-lg-6">
+                        <div class="text-end mb-5">
+                            <h2 class="mb-4" th:text="${platform['platform.module10.1']}"></h2>
+                            <p class="fs-5" th:text="${platform['platform.module10.2']}"></p>
+                            <p class="fs-5" th:text="${platform['platform.module10.3']}"></p>
+                            <p class="fs-5" th:text="${platform['platform.module10.4']}"></p>
+                            <p class="fs-5" th:text="${platform['platform.module10.5']}"></p>
+                            <p class="fs-3">
+                                <b th:text="${menu['menu.products.forex']}"></b>/
+                                <b th:text="${menu['menu.products.stock']}"></b>/
+                                <b th:text="${menu['menu.products.cryptocurrency']}"></b>/
+                                <b th:text="${menu['menu.products.cfds']}"></b>/
+                                <b th:text="${menu['menu.products.metals']}"></b>/
+                                <b th:text="${menu['menu.products.indices']}"></b>/
+                                <b th:text="${menu['menu.products.commodities']}"></b>/
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                            <a target="_blank"
+                               href="https://download.metatrader.com/cdn/web/atom.markets.ltd/mt4/fxatommarkets4setup.exe">
+                                <img src="/img/platform/module10/1.png" alt="">
+                            </a>
+                            <a target="_blank"
+                               href="https://download.metatrader.com/cdn/mobile/mt4/ios?server=fxAtomMarkets-Demo,fxAtomMarkets-Live">
+                                <img src="/img/platform/module10/2.png" alt="">
+                            </a>
+                            <a target="_blank"
+                               href="https://download.metatrader.com/cdn/mobile/mt4/android?server=fxAtomMarkets-Demo,fxAtomMarkets-Live">
+                                <img src="/img/platform/module10/3.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </th:block>
