@@ -30,8 +30,8 @@ public class GlobalControllerAdvice {
     public void init() {
         languageMap = new LinkedHashMap<>();
         languageMap.put("en", "English");
-//        languageMap.put("in", "INDONESIA");
-//        languageMap.put("vn", "Tiếng Việt");
+        languageMap.put("in", "INDONESIA");
+        languageMap.put("vn", "Tiếng Việt");
         languageMap.put("tc", "繁體中文");
         languageMap.put("ko", "한국어");
         languageMap.put("cn", "简体中文");
