@@ -34,11 +34,17 @@
 
     <script>
         $(document).ready(function () {
-            $('[data-toggle="popover"]').popover({
+            let dom = $("#popover-image").clone();
+            $('#qr').popover({
                 html: true,
-                content: '<img src="/img/qrCode/1.png" alt="Sample Image" class="img-fluid">',
-                trigger: 'click'
+                content: dom.attr("style", "display:block"),
+                trigger: 'hover',
+                placement: 'top',
+                container: 'body',
+                boundary: 'window',
+
             });
+
         });
     </script>
 
@@ -302,10 +308,11 @@
             </div>
         </div>
     </div>
-    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us" data-placement="top"
-            data-toggle="popover">
+    <button type="button" class="btn btn-lg btn-warning btn-lg-square contact-us" id="qr">
         <i class="bi bi-whatsapp"></i>
     </button>
+
+    <img id="popover-image" src="/img/qrCode/1.png" style="display: none;">
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     <!-- Back to Top -->
 </th:block>
