@@ -2,12 +2,15 @@ package com.am.broker.advice;
 
 import com.am.broker.utils.MessageUtils;
 import com.am.broker.utils.ServletUtils;
+import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.NoHandlerFoundException;
+import org.thymeleaf.exceptions.TemplateInputException;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -57,14 +60,5 @@ public class GlobalControllerAdvice {
         model.addAttribute("common", common);
         model.addAttribute("selectedLanguageKey", selectedLanguageKey);
         model.addAttribute("languageMap", languageMap);
-    }
-
-    @ExceptionHandler(SpelEvaluationException.class)
-    public ModelAndView handleNotFoundException() {
-        // 创建一个ModelAndView对象，设置重定向视图
-        ModelAndView modelAndView = new ModelAndView();
-        // 设置重定向到首页
-        modelAndView.setViewName("redirect:/");
-        return modelAndView;
     }
 }
