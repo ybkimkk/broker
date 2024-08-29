@@ -2,19 +2,12 @@ package com.am.broker.advice;
 
 import com.am.broker.utils.MessageUtils;
 import com.am.broker.utils.ServletUtils;
-import org.springframework.boot.web.servlet.error.ErrorController;
-import org.springframework.expression.spel.SpelEvaluationException;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.NoHandlerFoundException;
-import org.thymeleaf.exceptions.TemplateInputException;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
