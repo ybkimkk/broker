@@ -154,11 +154,33 @@
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
                            th:text="${menu['menu.account']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="https://office.am-broker.com/admin/login.php" target="_blank"
+                            <a onclick="jumpToLogin()" href="javascript:void(0)"
                                class="dropdown-item" th:text="${menu['menu.account.login']}"></a>
-                            <a href="https://office.am-broker.com/admin/reg.php" target="_blank" class="dropdown-item"
+                            <a onclick="jumpToregister()" href="javascript:void(0)"
+                               class="dropdown-item"
                                th:text="${menu['menu.account.register']}"></a>
                         </div>
+                        <script>
+                            function jumpToLogin() {
+                                if (isVn()) {
+                                    window.open("https://trader.am-broker.com/admin/login.php", '_blank');
+                                    return;
+                                }
+                                window.open("https://office.am-broker.com/admin/login.php", '_blank');
+                            }
+
+                            function jumpToregister() {
+                                if (isVn()) {
+                                    window.open("https://trader.am-broker.com/admin/reg.php", '_blank');
+                                    return;
+                                }
+                                window.open("https://office.am-broker.com/admin/reg.php", '_blank');
+                            }
+
+                            function isVn() {
+                                return Cookies.get("lang") === 'vn';
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
