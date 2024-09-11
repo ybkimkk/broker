@@ -36,4 +36,11 @@ public class AboutUs {
         model.addAttribute("aboutUs", aboutUs);
         return "tradingMarkets/index";
     }
+
+    @GetMapping("/licenses")
+    public String licenses(Model model){
+        Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
+        model.addAttribute("aboutUs", aboutUs);
+        return "licenses/index";
+    }
 }

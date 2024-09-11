@@ -17,7 +17,8 @@
     <!-- Customized Bootstrap Stylesheet -->
     <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
-    <script th:src="@{/bootstrap-4.6.2-dist/js/bootstrap.min.js}"></script>
+    <script th:src="@{/bootstrap-5.3.0/js/bootstrap.min.js}"></script>
+    <script th:src="@{/bootstrap-5.3.0/js/bootstrap.bundle.min.js}"></script>
 
     <!-- Template Stylesheet -->
     <link th:href="@{/css/style.css}" rel="stylesheet">
@@ -30,10 +31,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         $(document).ready(function () {
+
             let dom = $("#popover-image").clone();
             $('#qr').popover({
                 html: true,
@@ -119,6 +120,9 @@
                                th:text="${menu['menu.contact']}"></a>
                             <a href="/tradingMarkets" class="dropdown-item menu-tradingMarkets"
                                th:text="${menu['menu.contact.tradingMarkets']}"></a>
+                            <!--                            TODO  ATOM  Licenses 国际化-->
+                            <a href="/licenses" class="dropdown-item menu-licenses"
+                               th:text="'ATOM Licenses'"></a>
                             <!--                            <a href="/methods" class="dropdown-item menu-tradingMethods"-->
                             <!--                               th:text="${menu['menu.contact.tradingMethods']}"></a>-->
                             <!--                            <a href="/accounts" class="dropdown-item menu-tradingAccounts"-->
@@ -334,6 +338,48 @@
 
     <img id="popover-image" src="/img/qrCode/1.png" style="display: none;">
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Modal -->
+    <div class="modal " id="eventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+         aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-body" style="padding: 0;position: relative;">
+                    <div style="position: absolute;right: 5px;top:5px;" class="text-white">
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <img src="/img/event/1.png" style="width: 100%;" alt=""/>
+                </div>
+                <div class="modal-footer">
+                    <label>
+                        <input type="checkbox" id="event-checkbox"/> Don't show again today
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let modal = new bootstrap.Modal(document.getElementById('eventModal'));
+
+        $('#eventModal').on('shown.bs.modal', function () {
+            let $this = $(this);
+            let $modal_dialog = $this.find('.modal-dialog');
+            // 垂直居中，如果觉得离top太远了可以修改除数，上面的图除数我改为了3
+            let m_top = ($(window).height() - $modal_dialog.height()) / 5;
+            $modal_dialog.css({'margin': m_top + 'px auto'});
+        });
+        $('#eventModal').on('hide.bs.modal', function () {
+            if ($('#event-checkbox').is(':checked')) {
+                let now = new Date();
+                let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+                Cookies.set('showEvent', 'true', {expires: expires});
+            }
+        });
+        console.log(Cookies.get('showEvent'));
+        if (!Cookies.get('showEvent')) {
+            modal.show();
+        }
+    </script>
     <!-- Back to Top -->
 </th:block>
 <!-- Footer End -->
