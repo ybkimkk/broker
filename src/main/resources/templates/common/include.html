@@ -160,7 +160,7 @@
                         <div class="dropdown-menu rounded-0 m-0">
                             <a onclick="jumpToLogin()" href="javascript:void(0)"
                                class="dropdown-item" th:text="${menu['menu.account.login']}"></a>
-                            <a onclick="jumpToregister()" href="javascript:void(0)"
+                            <a onclick="jumpToRegister()" href="javascript:void(0)"
                                class="dropdown-item"
                                th:text="${menu['menu.account.register']}"></a>
                         </div>
@@ -173,7 +173,7 @@
                                 window.open("https://office.am-broker.com/admin/login.php", '_blank');
                             }
 
-                            function jumpToregister() {
+                            function jumpToRegister() {
                                 if (isVn()) {
                                     window.open("https://trader.am-broker.com/admin/reg.php", '_blank');
                                     return;
@@ -191,19 +191,22 @@
         </nav>
         <script>
             let productMenu = ["menu-forex", "menu-stock", "menu-cryptocurrency", "menu-cfds", "menu-metals", "menu-indices", "menu-commodities"];
-            let aboutUsMenu = ["menu-tradingMarkets", "menu-tradingMethods", "menu-tradingAccounts"];
+            let aboutUsMenu = ["menu-tradingMarkets", "menu-tradingMethods", "menu-tradingAccounts","menu-licenses"];
             // active
-            let menu = location.pathname.replace("/", "");
+            // 获取当前路径并去除前导斜杠
+            let menu = location.pathname.replace(/^\//, "");
+            let menuClass = `menu-${menu}`;
+            // 根据路径设置激活状态
             if (menu === "") {
-                $(".menu-home").addClass("active")
-            } else if (aboutUsMenu.includes("menu-" + menu)) {
+                $(".menu-home").addClass("active");
+            } else if (aboutUsMenu.includes(menuClass)) {
                 $(".menu-aboutUs").addClass("active");
-                $(".menu-" + menu).addClass("active");
-            } else if (productMenu.includes("menu-" + menu)) {
+                $(`.${menuClass}`).addClass("active");
+            } else if (productMenu.includes(menuClass)) {
                 $(".menu-products").addClass("active");
-                $(".menu-" + menu).addClass("active");
+                $(`.${menuClass}`).addClass("active");
             } else {
-                $(".menu-" + menu).addClass("active")
+                $(`.${menuClass}`).addClass("active");
             }
         </script>
     </div>
@@ -292,6 +295,7 @@
                     <div class="col-lg-2 col-md-4">
                         <h5 class="text-white mb-4 box-before" th:text="${menu['menu.contact']}"></h5>
                         <a class="btn btn-link text-white-50" href="/aboutUs" th:text="${menu['menu.contact']}"></a>
+                        <a class="btn btn-link text-white-50" href="/licenses" th:text="'ATOM Licenses'"></a>
                     </div>
 
                     <div class="col-lg-5 col-md-12">

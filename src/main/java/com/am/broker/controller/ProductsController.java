@@ -17,7 +17,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/")
-public class Products {
+public class ProductsController {
     @GetMapping("products")
     public String products(Model model) {
         Map<String, String> home = MessageUtils.searchMessages("home");

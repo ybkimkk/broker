@@ -10,23 +10,20 @@ import java.util.Map;
 
 /**
  * @author jinyongbin
- * @version 1.0
- * @since 2024/7/15
  */
 @Controller
 @RequestMapping("/")
-public class Platform {
-    @GetMapping("platform")
-    public String plat(Model model){
+public class HomeController {
+
+    @GetMapping
+    public String index(Model model) {
         Map<String, String> home = MessageUtils.searchMessages("home");
         model.addAttribute("home", home);
+        return "home/index";
+    }
 
-        Map<String, String> platform = MessageUtils.searchMessages("platform");
-        model.addAttribute("platform", platform);
-
-
-        Map<String, String> metals = MessageUtils.searchMessages("metals");
-        model.addAttribute("metals", metals);
-        return "platform/index";
+    @GetMapping("test")
+    public String test() {
+        return "test";
     }
 }

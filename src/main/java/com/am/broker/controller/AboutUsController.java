@@ -15,7 +15,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping
-public class AboutUs {
+public class AboutUsController {
     @GetMapping("aboutUs")
     public String contact(Model model){
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
