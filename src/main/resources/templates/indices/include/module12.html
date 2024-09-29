@@ -5,8 +5,8 @@
         <div class="accordion p-3" id="accordionExample">
             <div class="card  mb-2 border-0">
                 <div class="gray-bg-color d-flex align-items-center justify-content-between p-3  user-select-none"
-                     id="headingOne" data-toggle="collapse"
-                     data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                     href="#collapseOne" data-bs-toggle="collapse"
+                    aria-expanded="true" aria-controls="collapseOne">
                     <div>
                         <h2 class="d-inline me-3">01</h2>
                         <p class="d-inline mb-0" th:text="${indices['indices.module12.2.1']}"></p>
@@ -15,16 +15,18 @@
                         <i class="bi bi-x-circle-fill fs-3"></i>
                     </div>
                 </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                <div id="collapseOne" class="collapse show"
                      data-parent="#accordionExample">
                     <div class="card-body">
                         <p th:text="${indices['indices.module12.2.2']}"></p>
                     </div>
                 </div>
             </div>
+
+
             <div class="card mb-2 border-0">
                 <div class="gray-bg-color d-flex align-items-center justify-content-between p-3  user-select-none"
-                     id="headingTwo" data-toggle="collapse"
+                     href="#collapseTwo" data-bs-toggle="collapse"
                      data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     <div>
                         <h2 class="d-inline me-3">02</h2>
@@ -34,16 +36,18 @@
                         <i class="bi bi-plus-circle fs-3"></i>
                     </div>
                 </div>
-                <div id="collapseTwo" class="collapse hide" aria-labelledby="headingTwo"
+                <div id="collapseTwo" class="collapse hide" 
                      data-parent="#accordionExample">
                     <div class="card-body">
                         <p th:text="${indices['indices.module12.3.2']}"></p>
                     </div>
                 </div>
             </div>
+
+
             <div class="card mb-2 border-0">
                 <div class="gray-bg-color d-flex align-items-center justify-content-between p-3  user-select-none"
-                     id="headingThree" data-toggle="collapse"
+                     href="#collapseThree" data-bs-toggle="collapse"
                      data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                     <div>
                         <h2 class="d-inline me-3">03</h2>
@@ -53,7 +57,7 @@
                         <i class="bi bi-plus-circle fs-3"></i>
                     </div>
                 </div>
-                <div id="collapseThree" class="collapse hide" aria-labelledby="headingThree"
+                <div id="collapseThree" class="collapse hide" 
                      data-parent="#accordionExample">
                     <div class="card-body">
                         <p th:text="${indices['indices.module12.4.2']}"></p>
@@ -64,12 +68,14 @@
         <script>
             let elements = ['collapseOne', 'collapseTwo', 'collapseThree'];
             elements.forEach(function (id) {
-                $('#' + id).on('hide.bs.collapse', function () {
-                    $("#" + this.id).prev().find('.qa-icon').html(' <i class="bi bi-plus-circle fs-3"></i>')
+                console.log(id)
+                let element = document.getElementById(id)
+                $(element).on('hide.bs.collapse',function (event) {
+                    $(this).prev().find('.qa-icon').html(' <i class="bi bi-plus-circle fs-3"></i>')
                 });
 
-                $('#' + id).on('show.bs.collapse', function () {
-                    $("#" + this.id).prev().find('.qa-icon').html(' <i class="bi bi-x-circle-fill fs-3"></i>')
+                $(element).on('show.bs.collapse', function (event) {
+                    $(this).prev().find('.qa-icon').html(' <i class="bi bi-x-circle-fill fs-3"></i>')
                 });
             });
         </script>
