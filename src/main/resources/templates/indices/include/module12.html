@@ -68,7 +68,6 @@
         <script>
             let elements = ['collapseOne', 'collapseTwo', 'collapseThree'];
             elements.forEach(function (id) {
-                console.log(id)
                 let element = document.getElementById(id)
                 $(element).on('hide.bs.collapse',function (event) {
                     $(this).prev().find('.qa-icon').html(' <i class="bi bi-plus-circle fs-3"></i>')
