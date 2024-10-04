@@ -30,4 +30,7 @@ spring:
     suffix: .html
 logging:
   level:
-    org.springframework.web: DEBUG
+    org.springframework.web: INFO
+maxmind:
+  geoip:
+    geolite2-city-mmdb: classpath:GeoLite2/GeoLite2-ASN.mmdb
