@@ -23,7 +23,7 @@ public class IpFilter implements Filter {
 
     @SneakyThrows
     @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
         osName = System.getProperty("os.name").toLowerCase();
         // 使用 ClassPathResource 读取位于 resources 目录下的文件
         Resource resource;
