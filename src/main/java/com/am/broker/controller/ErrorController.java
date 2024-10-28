@@ -10,7 +10,7 @@ import java.util.Map;
 @Controller
 public class ErrorController {
     @RequestMapping("/denied")
-    public String contact(Model model){
+    public String contact(Model model) {
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         return "denied/index";
     }

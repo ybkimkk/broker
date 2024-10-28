@@ -382,14 +382,15 @@
     </div>
     <script>
         let modal = new bootstrap.Modal(document.getElementById('eventModal'));
-        $('#eventModal').on('shown.bs.modal', function () {
+        let eventModal = $('#eventModal');
+        eventModal.on('shown.bs.modal', function () {
             let $this = $(this);
             let $modal_dialog = $this.find('.modal-dialog');
             // 垂直居中，如果觉得离top太远了可以修改除数
             let m_top = ($(window).height() - $modal_dialog.height()) / 5;
             $modal_dialog.css({'margin': m_top + 'px auto'});
         });
-        $('#eventModal').on('hide.bs.modal', function () {
+        eventModal.on('hide.bs.modal', function () {
             if ($('#event-checkbox').is(':checked')) {
                 let now = new Date();
                 let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
