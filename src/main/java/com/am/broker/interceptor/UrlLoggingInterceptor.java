@@ -1,5 +1,6 @@
 package com.am.broker.interceptor;
 
+import cn.hutool.core.util.StrUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -32,7 +33,10 @@ public class UrlLoggingInterceptor implements HandlerInterceptor {
         String requestURI = request.getRequestURI();
         boolean validation = filterList.stream().anyMatch(requestURI::endsWith);
         if (!validation) {
-            log.info("interview url is : {}?{}", requestURI, request.getQueryString());
+            if (StrUtil.isNotEmpty(request.getQueryString())) {
+                requestURI += "?" + request.getQueryString();
+            }
+            log.info("interview url is : {}", requestURI);
         }
         return true; // 继续执行
     }
