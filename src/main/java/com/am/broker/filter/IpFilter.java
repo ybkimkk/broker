@@ -1,5 +1,6 @@
 package com.am.broker.filter;
 
+import com.am.broker.utils.ServletUtils;
 import com.maxmind.geoip2.DatabaseReader;
 import com.maxmind.geoip2.model.CountryResponse;
 import lombok.SneakyThrows;
@@ -46,7 +47,7 @@ public class IpFilter implements Filter {
             String requestURI = httpRequest.getRequestURI();
             if (!requestURI.equals("/denied")) {
                 try {
-                    String ipAddress = getClientIp(httpRequest);
+                    String ipAddress = ServletUtils.getClientIp(httpRequest);
                     InetAddress ipAddressInet = InetAddress.getByName(ipAddress);
 
                     CountryResponse countryResponse = dbReader.country(ipAddressInet);
@@ -64,17 +65,6 @@ public class IpFilter implements Filter {
         }
 
         filterChain.doFilter(servletRequest, servletResponse);
-    }
-
-    public String getClientIp(HttpServletRequest request) {
-        String ipAddress = request.getHeader("X-Forwarded-For");
-        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
-            ipAddress = request.getHeader("X-Real-IP");
-        }
-        if (ipAddress == null || ipAddress.isEmpty() || "unknown".equalsIgnoreCase(ipAddress)) {
-            ipAddress = request.getRemoteAddr();
-        }
-        return ipAddress;
     }
 
 }

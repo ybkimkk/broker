@@ -1,6 +1,8 @@
 server:
   port: 8080
 spring:
+  cache:
+    type: caffeine
   web:
     resources:
       add-mappings: true
@@ -34,3 +36,6 @@ logging:
 maxmind:
   geoip:
     geolite2-city-mmdb: classpath:GeoLite2/GeoLite2-ASN.mmdb
+
+block:
+  count: 5

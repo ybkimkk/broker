@@ -8,10 +8,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Map;
 
 @Controller
-public class ErrorController {
+public class DeniedController {
     @RequestMapping("/denied")
-    public String contact(Model model) {
+    public String denied(Model model) {
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         return "denied/index";
+    }
+
+    @RequestMapping("/block")
+    public String block(Model model) {
+        Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
+        return "denied/block";
     }
 }
