@@ -22,13 +22,6 @@ public class AboutUsController {
         model.addAttribute("aboutUs", aboutUs);
         return "aboutUs/index";
     }
-//
-//    @GetMapping("/item1")
-//    public String aboutUs1(Model model){
-//        Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
-//        model.addAttribute("aboutUs", aboutUs);
-//        return "aboutUs/item1/index";
-//    }
 
     @GetMapping("/tradingMarkets")
     public String tradingMarkets(Model model){
@@ -39,6 +32,9 @@ public class AboutUsController {
 
     @GetMapping("/licenses")
     public String licenses(Model model){
+        Map<String, String> licenses = MessageUtils.searchMessages("licenses");
+        model.addAttribute("licenses", licenses);
+
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         model.addAttribute("aboutUs", aboutUs);
         return "licenses/index";

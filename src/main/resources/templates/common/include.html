@@ -208,7 +208,7 @@
         </nav>
         <script>
             let productMenu = ["menu-forex", "menu-stock", "menu-cryptocurrency", "menu-cfds", "menu-metals", "menu-indices", "menu-commodities"];
-            let aboutUsMenu = ["menu-tradingMarkets", "menu-tradingMethods", "menu-tradingAccounts","menu-licenses"];
+            let aboutUsMenu = ["menu-tradingMarkets", "menu-tradingMethods", "menu-tradingAccounts", "menu-licenses"];
             // active
             // 获取当前路径并去除前导斜杠
             let menu = location.pathname.replace(/^\//, "");
@@ -386,9 +386,11 @@
         eventModal.on('shown.bs.modal', function () {
             let $this = $(this);
             let $modal_dialog = $this.find('.modal-dialog');
-            // 垂直居中，如果觉得离top太远了可以修改除数
             let m_top = ($(window).height() - $modal_dialog.height()) / 5;
-            $modal_dialog.css({'margin': m_top + 'px auto'});
+            $modal_dialog.css({
+                'margin': m_top + 'px auto',
+                'max-width': '300px'
+            });
         });
         eventModal.on('hide.bs.modal', function () {
             if ($('#event-checkbox').is(':checked')) {
