@@ -24,14 +24,14 @@ public class CustomErrorController implements ErrorController {
     public String handleError(HttpServletRequest request, Model model) {
         String clientIp = ServletUtils.getClientIp(request);
         Integer count = CacheUtil.getCache(clientIp, Integer.class);
-        count = Objects.isNull(count) ? 0 : count;
+        count = Objects.isNull(count) ? 1 : count;
 
         log.info("ip: {},count:{}", clientIp, count);
         if (count.equals(blockCount)) {
             return "redirect:/block";
         }
 
-        CacheUtil.addCache(clientIp, ++count);
+        CacheUtil.addCache(clientIp, count);
 
         return "redirect:/";
     }
