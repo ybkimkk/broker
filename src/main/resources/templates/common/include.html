@@ -48,13 +48,23 @@
 
     <!-- Meta Pixel Code -->
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '883685063155203');
         fbq('track', 'PageView');
@@ -86,8 +96,10 @@
     </div>
     <script>
         function selectLanguage(selectedLanguage, e) {
-            Cookies.set('lang', selectedLanguage);
-            location.reload();
+            let pathname = window.location.pathname;
+            let aPath = pathname.split("/");
+            aPath[1] = selectedLanguage;
+            window.location.href = aPath.join("/");
         }
     </script>
 </th:block>
@@ -95,15 +107,6 @@
 
 <!-- Menu start-->
 <th:block th:fragment="menu">
-    <!--    &lt;!&ndash; Spinner Start &ndash;&gt;-->
-    <!--    <div id="spinner"-->
-    <!--         class="show bg-white position-fixed translate-middle top-50 start-50 d-flex align-items-center justify-content-center">-->
-    <!--        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">-->
-    <!--            <span class="sr-only">Loading...</span>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--    &lt;!&ndash; Spinner End &ndash;&gt;-->
-
     <div class="container-fluid  nav-bar" style="padding: 0">
         <div class="login-menu d-flex align-items-center justify-content-end">
             <div>
@@ -115,7 +118,7 @@
     <div class="container-fluid nav-bar bg-transparent" style="padding: 0">
 
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-            <a href="/" class="navbar-brand d-flex align-items-center text-center">
+            <a th:href="@{/{selectedLanguageKey}(selectedLanguageKey=${selectedLanguageKey})}" class="navbar-brand d-flex align-items-center text-center">
                 <div class=" p-2 me-2">
                     <img src="/img/logo.png" alt="Icon" style="width: 50px;">
                 </div>
@@ -126,50 +129,45 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a href="/" class="nav-item nav-link menu-home" th:text="${menu['menu.home']}"></a>
+                    <a th:href="@{/{selectedLanguageKey}(selectedLanguageKey=${selectedLanguageKey})}" class="nav-item nav-link menu-home" th:text="${menu['menu.home']}"></a>
                     <div class="nav-item dropdown">
-                        <a href="/aboutUs" class="nav-link dropdown-toggle menu-aboutUs show-on-pc"
+                        <a th:href="@{/{selectedLanguageKey}/aboutUs(selectedLanguageKey=${selectedLanguageKey})}" class="nav-link dropdown-toggle menu-aboutUs show-on-pc"
                            th:text="${menu['menu.contact']}"></a>
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
                            data-bs-toggle="dropdown" th:text="${menu['menu.contact']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="/aboutUs" class="dropdown-item menu-products show-on-mobile"
+                            <a th:href="@{/{selectedLanguageKey}/aboutUs(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-products show-on-mobile"
                                th:text="${menu['menu.contact']}"></a>
-                            <a href="/tradingMarkets" class="dropdown-item menu-tradingMarkets"
+                            <a th:href="@{/{selectedLanguageKey}/tradingMarkets(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-tradingMarkets"
                                th:text="${menu['menu.contact.tradingMarkets']}"></a>
-                            <!--                            TODO  ATOM  Licenses 国际化-->
-                            <a href="/licenses" class="dropdown-item menu-licenses"
+                            <a th:href="@{/{selectedLanguageKey}/licenses(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-licenses"
                                th:text="'ATOM Licenses'"></a>
-                            <!--                            <a href="/methods" class="dropdown-item menu-tradingMethods"-->
-                            <!--                               th:text="${menu['menu.contact.tradingMethods']}"></a>-->
-                            <!--                            <a href="/accounts" class="dropdown-item menu-tradingAccounts"-->
-                            <!--                               th:text="${menu['menu.contact.tradingAccounts']}"></a>-->
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a href="/products" class="nav-link dropdown-toggle menu-products show-on-pc"
+                        <a th:href="@{/{selectedLanguageKey}/products(selectedLanguageKey=${selectedLanguageKey})}" class="nav-link dropdown-toggle menu-products show-on-pc"
                            th:text="${menu['menu.products']}"></a>
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
                            data-bs-toggle="dropdown" th:text="${menu['menu.products']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a href="/products" class="dropdown-item menu-products show-on-mobile"
+                            <a th:href="@{/{selectedLanguageKey}/products(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-products show-on-mobile"
                                th:text="${menu['menu.products']}"></a>
-                            <a href="/forex" class="dropdown-item menu-forex"
+                            <a th:href="@{/{selectedLanguageKey}/forex(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-forex"
                                th:text="${menu['menu.products.forex']}"></a>
-                            <a href="/stock" class="dropdown-item menu-stock"
+                            <a th:href="@{/{selectedLanguageKey}/stock(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-stock"
                                th:text="${menu['menu.products.stock']}"></a>
-                            <a href="/cryptocurrency" class="dropdown-item menu-cryptocurrency"
+                            <a th:href="@{/{selectedLanguageKey}/cryptocurrency(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-cryptocurrency"
                                th:text="${menu['menu.products.cryptocurrency']}"></a>
-                            <a href="/cfds" class="dropdown-item menu-cfds" th:text="${menu['menu.products.cfds']}"></a>
-                            <a href="/metals" class="dropdown-item menu-metals"
+                            <a th:href="@{/{selectedLanguageKey}/cfds(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-cfds" th:text="${menu['menu.products.cfds']}"></a>
+                            <a href="/metals(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-metals"
                                th:text="${menu['menu.products.metals']}"></a>
-                            <a href="/indices" class="dropdown-item menu-indices"
+                            <a th:href="@{/{selectedLanguageKey}/indices(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-indices"
                                th:text="${menu['menu.products.indices']}"></a>
-                            <a href="/commodities" class="dropdown-item  menu-commodities"
+                            <a th:href="@{/{selectedLanguageKey}/commodities(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item  menu-commodities"
                                th:text="${menu['menu.products.commodities']}"></a>
                         </div>
                     </div>
-                    <a href="/platform" class="nav-item nav-link menu-platform" th:text="${menu['menu.platform']}"></a>
+                    <a th:href="@{/{selectedLanguageKey}/platform(selectedLanguageKey=${selectedLanguageKey})}" class="nav-item nav-link menu-platform" th:text="${menu['menu.platform']}"></a>
 
                     <div class="nav-item dropdown">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
@@ -328,27 +326,6 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white"
                          th:utext="${footer['footer.5']}">
-                    </div>
-                    <div class="col-lg-3 mb-md-3">
-                        <ul class="list-unstyled d-flex align-items-center justify-content-end">
-                            <li class="me-2" th:text="${footer['footer.6']}"></li>
-                            <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
-                                        class="bi bi-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
-                                        class="bi bi-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
-                                        class="bi bi-youtube"></i></a>
-                            </li>
-                            <li>
-                                <a class="btn btn-outline-light btn-social" href="javascript:void(0)"><i
-                                        class="bi bi-linkedin"></i></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>

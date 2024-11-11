@@ -12,18 +12,13 @@ import java.util.Map;
  * @author jinyongbin
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class HomeController {
 
-    @GetMapping
+    @GetMapping("/*")
     public String index(Model model) {
         Map<String, String> home = MessageUtils.searchMessages("home");
         model.addAttribute("home", home);
         return "home/index";
-    }
-
-    @GetMapping("test")
-    public String test() {
-        return "test";
     }
 }

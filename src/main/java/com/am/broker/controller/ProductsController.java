@@ -16,44 +16,44 @@ import java.util.Map;
  */
 
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class ProductsController {
-    @GetMapping("products")
+    @GetMapping("/*/products")
     public String products(Model model) {
         Map<String, String> home = MessageUtils.searchMessages("home");
         model.addAttribute("home", home);
         return "home/index";
     }
 
-    @GetMapping("forex")
+    @GetMapping("/*/forex")
     public String forex(Model model) {
         Map<String, String> forex = MessageUtils.searchMessages("forex");
         model.addAttribute("forex", forex);
         return "forex/index";
     }
 
-    @GetMapping("stock")
+    @GetMapping("/*/stock")
     public String stock(Model model) {
         Map<String, String> stock = MessageUtils.searchMessages("stock");
         model.addAttribute("stock", stock);
         return "stock/index";
     }
 
-    @GetMapping("cryptocurrency")
+    @GetMapping("/*/cryptocurrency")
     public String cryptocurrency(Model model) {
         Map<String, String> cryptocurrency = MessageUtils.searchMessages("cryptocurrency");
         model.addAttribute("cryptocurrency", cryptocurrency);
         return "cryptocurrency/index";
     }
 
-    @GetMapping("cfds")
+    @GetMapping("/*/cfds")
     public String cfds(Model model) {
         Map<String, String> cfds = MessageUtils.searchMessages("cfds");
         model.addAttribute("cfds", cfds);
         return "cfds/index";
     }
 
-    @GetMapping("metals")
+    @GetMapping("/*/metals")
     public String metals(Model model) {
         Map<String, String> metals = MessageUtils.searchMessages("metals");
         model.addAttribute("metals", metals);
@@ -67,7 +67,7 @@ public class ProductsController {
         return "metals/index";
     }
 
-    @GetMapping("indices")
+    @GetMapping("/*/indices")
     public String indices(Model model) {
         Map<String, String> metals = MessageUtils.searchMessages("metals");
         model.addAttribute("metals", metals);
@@ -84,7 +84,7 @@ public class ProductsController {
         return "indices/index";
     }
 
-    @GetMapping("commodities")
+    @GetMapping("/*/commodities")
     public String commodities(Model model) {
         Map<String, String> commodities = MessageUtils.searchMessages("commodities");
         model.addAttribute("commodities", commodities);

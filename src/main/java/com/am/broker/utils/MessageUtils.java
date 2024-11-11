@@ -1,9 +1,11 @@
 package com.am.broker.utils;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.ArrayUtil;
 import com.am.broker.spring.SpringUtils;
+import lombok.Getter;
 import org.springframework.context.MessageSource;
 
+import javax.annotation.PostConstruct;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -19,6 +21,23 @@ public class MessageUtils {
 
     private static final ThreadLocal<Locale> CURRENT_LOCALE = new ThreadLocal<>();
 
+    @Getter
+    private static final LinkedHashMap<String, String> languageMap = new LinkedHashMap<>();
+    
+ 
+    
+
+
+    static {
+        languageMap.put("en", "English");
+        languageMap.put("in", "INDONESIA");
+        languageMap.put("vn", "Tiếng Việt");
+        languageMap.put("tc", "繁體中文");
+        languageMap.put("ko", "한국어");
+        languageMap.put("cn", "简体中文");
+        languageMap.put("jp", "日本語");
+        languageMap.put("ar", "بالعربية");
+    }
 
     /**
      * 根据消息键和参数 获取消息 委托给spring messageSource
@@ -33,9 +52,15 @@ public class MessageUtils {
         return MESSAGE_SOURCE.getMessage(code, args, locale);
     }
 
+    public static String getCurrentLanguage() {
+        String requestURI = ServletUtils.getRequest().getRequestURI();
+        String[] requestURISplit = requestURI.split("/");
+        return ArrayUtil.isNotEmpty(requestURISplit) && languageMap.containsKey(requestURISplit[1]) ? requestURISplit[1] : "en";
+    }
+
     public static Locale getCurrentLocale() {
-        String lang = ServletUtils.getCookie(ServletUtils.getRequest(), "lang");
-        return new Locale(StrUtil.isNotBlank(lang) ? lang : "en");
+
+        return new Locale(getCurrentLanguage());
     }
 
     // 在需要更新语言的地方调用此方法

@@ -14,9 +14,9 @@ import java.util.Map;
  * @since 2024/7/15
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping
 public class PlatformController {
-    @GetMapping("platform")
+    @GetMapping("/*/platform")
     public String plat(Model model){
         Map<String, String> home = MessageUtils.searchMessages("home");
         model.addAttribute("home", home);

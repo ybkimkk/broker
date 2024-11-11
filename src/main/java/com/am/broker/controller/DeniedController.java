@@ -9,13 +9,13 @@ import java.util.Map;
 
 @Controller
 public class DeniedController {
-    @RequestMapping("/denied")
+    @RequestMapping("denied")
     public String denied(Model model) {
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         return "denied/index";
     }
 
-    @RequestMapping("/block")
+    @RequestMapping("block")
     public String block(Model model) {
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         return "denied/block";
