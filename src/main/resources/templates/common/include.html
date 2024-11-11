@@ -118,7 +118,7 @@
     <div class="container-fluid nav-bar bg-transparent" style="padding: 0">
 
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
-            <a th:href="@{/{selectedLanguageKey}(selectedLanguageKey=${selectedLanguageKey})}" class="navbar-brand d-flex align-items-center text-center">
+            <a th:href="|/${selectedLanguageKey}|" class="navbar-brand d-flex align-items-center text-center">
                 <div class=" p-2 me-2">
                     <img src="/img/logo.png" alt="Icon" style="width: 50px;">
                 </div>
@@ -129,45 +129,54 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto">
-                    <a th:href="@{/{selectedLanguageKey}(selectedLanguageKey=${selectedLanguageKey})}" class="nav-item nav-link menu-home" th:text="${menu['menu.home']}"></a>
+                    <a th:href="|/${selectedLanguageKey}|" class="nav-item nav-link menu-home"
+                       th:text="${menu['menu.home']}"></a>
                     <div class="nav-item dropdown">
-                        <a th:href="@{/{selectedLanguageKey}/aboutUs(selectedLanguageKey=${selectedLanguageKey})}" class="nav-link dropdown-toggle menu-aboutUs show-on-pc"
+                        <a th:href="|/${selectedLanguageKey}/aboutUs|"
+                           class="nav-link dropdown-toggle menu-aboutUs show-on-pc"
                            th:text="${menu['menu.contact']}"></a>
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
                            data-bs-toggle="dropdown" th:text="${menu['menu.contact']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a th:href="@{/{selectedLanguageKey}/aboutUs(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-products show-on-mobile"
+                            <a th:href="|/${selectedLanguageKey}/aboutUs|"
+                               class="dropdown-item menu-products show-on-mobile"
                                th:text="${menu['menu.contact']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/tradingMarkets(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-tradingMarkets"
+                            <a th:href="|/${selectedLanguageKey}/tradingMarkets|"
+                               class="dropdown-item menu-tradingMarkets"
                                th:text="${menu['menu.contact.tradingMarkets']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/licenses(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-licenses"
+                            <a th:href="|/${selectedLanguageKey}/licenses|" class="dropdown-item menu-licenses"
                                th:text="'ATOM Licenses'"></a>
                         </div>
                     </div>
                     <div class="nav-item dropdown">
-                        <a th:href="@{/{selectedLanguageKey}/products(selectedLanguageKey=${selectedLanguageKey})}" class="nav-link dropdown-toggle menu-products show-on-pc"
+                        <a th:href="|/${selectedLanguageKey}/products|"
+                           class="nav-link dropdown-toggle menu-products show-on-pc"
                            th:text="${menu['menu.products']}"></a>
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle show-on-mobile"
                            data-bs-toggle="dropdown" th:text="${menu['menu.products']}"></a>
                         <div class="dropdown-menu rounded-0 m-0">
-                            <a th:href="@{/{selectedLanguageKey}/products(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-products show-on-mobile"
+                            <a th:href="|/${selectedLanguageKey}/products|"
+                               class="dropdown-item menu-products show-on-mobile"
                                th:text="${menu['menu.products']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/forex(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-forex"
+                            <a th:href="|/${selectedLanguageKey}/forex|" class="dropdown-item menu-forex"
                                th:text="${menu['menu.products.forex']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/stock(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-stock"
+                            <a th:href="|/${selectedLanguageKey}/stock|" class="dropdown-item menu-stock"
                                th:text="${menu['menu.products.stock']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/cryptocurrency(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-cryptocurrency"
+                            <a th:href="|/${selectedLanguageKey}/cryptocurrency|"
+                               class="dropdown-item menu-cryptocurrency"
                                th:text="${menu['menu.products.cryptocurrency']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/cfds(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-cfds" th:text="${menu['menu.products.cfds']}"></a>
-                            <a href="/metals(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-metals"
+                            <a th:href="|/${selectedLanguageKey}/cfds|" class="dropdown-item menu-cfds"
+                               th:text="${menu['menu.products.cfds']}"></a>
+                            <a th:href="|/${selectedLanguageKey}/metals|" class="dropdown-item menu-metals"
                                th:text="${menu['menu.products.metals']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/indices(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item menu-indices"
+                            <a th:href="|/${selectedLanguageKey}/indices|" class="dropdown-item menu-indices"
                                th:text="${menu['menu.products.indices']}"></a>
-                            <a th:href="@{/{selectedLanguageKey}/commodities(selectedLanguageKey=${selectedLanguageKey})}" class="dropdown-item  menu-commodities"
+                            <a th:href="|/${selectedLanguageKey}/commodities|" class="dropdown-item  menu-commodities"
                                th:text="${menu['menu.products.commodities']}"></a>
                         </div>
                     </div>
-                    <a th:href="@{/{selectedLanguageKey}/platform(selectedLanguageKey=${selectedLanguageKey})}" class="nav-item nav-link menu-platform" th:text="${menu['menu.platform']}"></a>
+                    <a th:href="|/${selectedLanguageKey}/platform|" class="nav-item nav-link menu-platform"
+                       th:text="${menu['menu.platform']}"></a>
 
                     <div class="nav-item dropdown">
                         <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
@@ -197,7 +206,10 @@
                             }
 
                             function isVn() {
-                                return Cookies.get("lang") === 'vn';
+                                let href = window.location.pathname;
+                                let aHref = href.split("/");
+                                debugger;
+                                return aHref[1] === 'vn';
                             }
                         </script>
                     </div>
@@ -207,12 +219,11 @@
         <script>
             let productMenu = ["menu-forex", "menu-stock", "menu-cryptocurrency", "menu-cfds", "menu-metals", "menu-indices", "menu-commodities"];
             let aboutUsMenu = ["menu-tradingMarkets", "menu-tradingMethods", "menu-tradingAccounts", "menu-licenses"];
-            // active
-            // 获取当前路径并去除前导斜杠
+
             let menu = location.pathname.replace(/^\//, "");
-            let menuClass = `menu-${menu}`;
-            // 根据路径设置激活状态
-            if (menu === "") {
+            let aMenu = menu.split("/");
+            let menuClass = `menu-${aMenu[1]}`;
+            if (aMenu.length === 1) {
                 $(".menu-home").addClass("active");
             } else if (aboutUsMenu.includes(menuClass)) {
                 $(".menu-aboutUs").addClass("active");
@@ -285,7 +296,8 @@
                     <div class="col-lg-3 col-md-4">
                         <h5 class="box-before text-white mb-4" th:text="${footer['footer.4.1']}">
                             Information</h5>
-                        <a class="btn btn-link text-white-50" href="/products" th:text="${footer['footer.4.2']}"></a>
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/products|"
+                           th:text="${footer['footer.4.2']}"></a>
                         <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/login.php"
                            th:text="${menu['menu.account.login']}"></a>
                         <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/reg.php"
@@ -293,24 +305,27 @@
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <h5 class="text-white mb-4 box-before" th:text="${menu['menu.products']}"></h5>
-                        <a class="btn btn-link text-white-50" href="/forex"
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/forex|"
                            th:text="${menu['menu.products.forex']}"></a>
-                        <a class="btn btn-link text-white-50" href="/stock"
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/stock|"
                            th:text="${menu['menu.products.stock']}"></a>
-                        <a class="btn btn-link text-white-50" href="/cryptocurrency"
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/cryptocurrency|"
                            th:text="${menu['menu.products.cryptocurrency']}"></a>
-                        <a class="btn btn-link text-white-50" href="/cfds" th:text="${menu['menu.products.cfds']}"></a>
-                        <a class="btn btn-link text-white-50" href="/metals"
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/cfds|"
+                           th:text="${menu['menu.products.cfds']}"></a>
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/metals|"
                            th:text="${menu['menu.products.metals']}"></a>
-                        <a class="btn btn-link text-white-50" href="/indices"
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/indices|"
                            th:text="${menu['menu.products.indices']}"></a>
-                        <a class="btn btn-link text-white-50" href="/commodities"
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/commodities|"
                            th:text="${menu['menu.products.commodities']}"></a>
                     </div>
                     <div class="col-lg-2 col-md-4">
                         <h5 class="text-white mb-4 box-before" th:text="${menu['menu.contact']}"></h5>
-                        <a class="btn btn-link text-white-50" href="/aboutUs" th:text="${menu['menu.contact']}"></a>
-                        <a class="btn btn-link text-white-50" href="/licenses" th:text="'ATOM Licenses'"></a>
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/aboutUs|"
+                           th:text="${menu['menu.contact']}"></a>
+                        <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/licenses|"
+                           th:text="'ATOM Licenses'"></a>
                     </div>
 
                     <div class="col-lg-5 col-md-12">
