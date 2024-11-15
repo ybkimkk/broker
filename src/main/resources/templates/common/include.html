@@ -208,7 +208,6 @@
                             function isVn() {
                                 let href = window.location.pathname;
                                 let aHref = href.split("/");
-                                debugger;
                                 return aHref[1] === 'vn';
                             }
                         </script>
@@ -274,6 +273,7 @@
                     <div>
                         <p class="m-0" th:text="${footer['footer.2']}"></p>
                         <small class="text-white">support@am-broker.com</small>
+                        <small class="text-white">au.support@am-broker.com</small>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mt-md-3 d-flex align-items-center">
@@ -285,6 +285,8 @@
                     <div>
                         <p class="m-0" th:text="${footer['footer.3.1']}"></p>
                         <small class="text-white" th:text="${footer['footer.3.2']}"></small>
+                        <br>
+                        <small class="text-white" th:text="${footer['footer.3.3']}"></small>
                     </div>
                 </div>
             </div>
@@ -298,9 +300,9 @@
                             Information</h5>
                         <a class="btn btn-link text-white-50" th:href="|/${selectedLanguageKey}/products|"
                            th:text="${footer['footer.4.2']}"></a>
-                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/login.php"
+                        <a class="btn btn-link text-white-50" onclick="jumpToLogin()" href="javascript:void(0)"
                            th:text="${menu['menu.account.login']}"></a>
-                        <a class="btn btn-link text-white-50" href="https://office.am-broker.com/admin/reg.php"
+                        <a class="btn btn-link text-white-50" onclick="jumpToLogin()" href="javascript:void(0)"
                            th:text="${menu['menu.account.register']}"></a>
                     </div>
                     <div class="col-lg-2 col-md-4">
@@ -401,7 +403,7 @@
 
 <!-- Trading Start -->
 <th:block th:fragment="trading">
-    <a href="https://office.am-broker.com/admin/login.php" class="btn btn-primary wow fadeIn px-5 " target="_blank">
+    <a  onclick="jumpToLogin()" href="javascript:void(0)" class="btn btn-primary wow fadeIn px-5 " target="_blank">
         <b class="text-white mb-0" style="font-size: 24px" th:text="${common['common.startTrading']}"></b>
     </a>
 </th:block>

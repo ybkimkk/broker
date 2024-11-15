@@ -31,9 +31,15 @@ public class I18nFilter implements Filter {
             if (ArrayUtil.isNotEmpty(split) && split.length >= 2) {
                 LinkedHashMap<String, String> languageMap = MessageUtils.getLanguageMap();
                 if (!languageMap.containsKey(split[1])) {
-                    split[1] = MessageUtils.getCurrentLanguage();
-                    httpResponse.sendRedirect(String.join("/", split));
-                    return;  // 
+                    try {
+                        split[1] = MessageUtils.getCurrentLanguage();
+                        httpResponse.sendRedirect(String.join("/", split));
+                        return;
+                    } catch (Exception e) {
+                        log.error("I18nFilter has error uri: {}, msg: {}", requestURI, e.getMessage());
+                        httpResponse.sendRedirect("/");
+                        return;
+                    }
                 }
             }
         }
