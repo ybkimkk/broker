@@ -36,7 +36,6 @@ public class I18nFilter implements Filter {
                         httpResponse.sendRedirect(String.join("/", split));
                         return;
                     } catch (Exception e) {
-                        log.error("I18nFilter has error uri: {}, msg: {}", requestURI, e.getMessage());
                         httpResponse.sendRedirect("/");
                         return;
                     }
