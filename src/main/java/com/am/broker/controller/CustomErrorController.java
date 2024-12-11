@@ -33,4 +33,6 @@ public class CustomErrorController implements ErrorController {
 
         return "redirect:/";
     }
+
+  
 }

@@ -20,7 +20,7 @@ spring:
       additional-paths: src/main/java
   thymeleaf:
     #调试时候写false 打包写true
-    cache: false
+
     check-template: true
     check-template-location: true
     content-type: text/html

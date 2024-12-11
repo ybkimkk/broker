@@ -17,21 +17,21 @@ import java.util.Map;
 @RequestMapping
 public class AboutUsController {
     @GetMapping("/*/aboutUs")
-    public String contact(Model model){
+    public String contact(Model model) {
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         model.addAttribute("aboutUs", aboutUs);
         return "aboutUs/index";
     }
 
     @GetMapping("/*/tradingMarkets")
-    public String tradingMarkets(Model model){
+    public String tradingMarkets(Model model) {
         Map<String, String> aboutUs = MessageUtils.searchMessages("aboutUs");
         model.addAttribute("aboutUs", aboutUs);
         return "tradingMarkets/index";
     }
 
     @GetMapping("/*/licenses")
-    public String licenses(Model model){
+    public String licenses(Model model) {
         Map<String, String> licenses = MessageUtils.searchMessages("licenses");
         model.addAttribute("licenses", licenses);
 
