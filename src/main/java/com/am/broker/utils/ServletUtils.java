@@ -30,6 +30,7 @@ public class ServletUtils {
     static {
         filterList.add(".css");
         filterList.add(".jpeg");
+        filterList.add(".jpg");
         filterList.add(".js");
         filterList.add(".png");
         filterList.add(".woff2");
