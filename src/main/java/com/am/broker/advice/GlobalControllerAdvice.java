@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * @author jinyongbin
@@ -28,5 +29,22 @@ public class GlobalControllerAdvice {
         model.addAttribute("common", common);
         model.addAttribute("selectedLanguageKey", MessageUtils.getCurrentLanguage());
         model.addAttribute("languageMap", MessageUtils.getLanguageMap());
+        model.addAttribute("isDesktop", isDesktop(request));
+    }
+
+
+    private boolean isDesktop(HttpServletRequest request) {
+        String userAgent = request.getHeader("User-Agent");
+        if (Objects.isNull(userAgent)) {
+            return true;
+        }
+
+        String[] mobileKeywords = {"Mobile", "Android", "iPhone", "iPad", "iPod", "Windows Phone", "BlackBerry"};
+        for (String keyword : mobileKeywords) {
+            if (userAgent.contains(keyword)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

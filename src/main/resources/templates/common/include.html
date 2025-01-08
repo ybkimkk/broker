@@ -365,7 +365,7 @@
                     <div style="position: absolute;right: 5px;top:5px;" class="text-white">
                         <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" sty></button>
                     </div>
-                    <img src="/img/event/4.jpeg" style="width: 100%;" alt=""/>
+                    <img src="/img/event/5.jpeg" style="width: 100%;" alt=""/>
                 </div>
                 <div class="modal-footer">
                     <label>
@@ -376,27 +376,29 @@
         </div>
     </div>
     <script>
-        let modal = new bootstrap.Modal(document.getElementById('eventModal'));
-        let eventModal = $('#eventModal');
-        eventModal.on('shown.bs.modal', function () {
-            let $this = $(this);
-            let $modal_dialog = $this.find('.modal-dialog');
-            let m_top = ($(window).height() - $modal_dialog.height()) / 5;
-            $modal_dialog.css({
-                'margin': m_top + 'px auto',
-                'max-width': '300px'
+        if ([[${isDesktop}]]) {
+            let modal = new bootstrap.Modal(document.getElementById('eventModal'));
+            let eventModal = $('#eventModal');
+            eventModal.on('shown.bs.modal', function () {
+                let $modal_dialog = $(this).find('.modal-dialog');
+                let m_top = ($(window).height() - $modal_dialog.height()) / 5;
+                $modal_dialog.css({
+                    'margin': m_top + 'px auto',
+                    'max-width': '300px'
+                });
             });
-        });
-        eventModal.on('hide.bs.modal', function () {
-            if ($('#event-checkbox').is(':checked')) {
-                let now = new Date();
-                let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-                Cookies.set('showEvent', 'true', {expires: expires});
+            eventModal.on('hide.bs.modal', function () {
+                if ($('#event-checkbox').is(':checked')) {
+                    let now = new Date();
+                    let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
+                    Cookies.set('showEvent', 'true', {expires: expires});
+                }
+            });
+            if (!Cookies.get('showEvent')) {
+                modal.show();
             }
-        });
-        if (!Cookies.get('showEvent')) {
-            modal.show();
         }
+
     </script>
     <!-- Back to Top -->
 </th:block>
