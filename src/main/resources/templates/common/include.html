@@ -119,10 +119,14 @@
 
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
             <a th:href="|/${selectedLanguageKey}|" class="navbar-brand d-flex align-items-center text-center">
-                <div class=" p-2 me-2">
+                <div class="me-2">
                     <img src="/img/logo.png" alt="Icon" style="width: 50px;">
                 </div>
-                <h3 class="m-0 primary-color">AM-Broker</h3>
+                <div class="text-start" th:if="${selectedLanguageKey =='cn'}">
+                    <p class="m-0"><b class="primary-color">澳特证券</b></p>
+                    <p class="m-0"><b class="primary-color">AM-Broker</b></p>
+                </div>
+               <h3  th:if="${selectedLanguageKey !='cn'}" class="m-0 primary-color">AM-Broker</h3>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -252,6 +256,7 @@
                         <img src="/img/logo.png" alt="Icon" style="width: 50px;">
                     </div>
                     <h3 class="m-0 text-white">AM-Broker</h3>
+
                 </div>
                 <div class="col-md-6 col-lg-3 d-flex align-items-center">
                     <div class="me-lg-2">
@@ -355,51 +360,49 @@
 
     <img id="popover-image" src="/img/qrCode/1.png" style="display: none;">
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-
     <!-- Modal -->
-    <div class="modal " id="eventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-         aria-labelledby="eventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-body" style="padding: 0;position: relative;">
-                    <div style="position: absolute;right: 5px;top:5px;" class="text-white">
-                        <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" sty></button>
-                    </div>
-                    <img src="/img/event/5.jpeg" style="width: 100%;" alt=""/>
-                </div>
-                <div class="modal-footer">
-                    <label>
-                        <input type="checkbox" id="event-checkbox"/> Don't show again today
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script>
-        if ([[${isDesktop}]]) {
-            let modal = new bootstrap.Modal(document.getElementById('eventModal'));
-            let eventModal = $('#eventModal');
-            eventModal.on('shown.bs.modal', function () {
-                let $modal_dialog = $(this).find('.modal-dialog');
-                let m_top = ($(window).height() - $modal_dialog.height()) / 5;
-                $modal_dialog.css({
-                    'margin': m_top + 'px auto',
-                    'max-width': '300px'
-                });
-            });
-            eventModal.on('hide.bs.modal', function () {
-                if ($('#event-checkbox').is(':checked')) {
-                    let now = new Date();
-                    let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);
-                    Cookies.set('showEvent', 'true', {expires: expires});
-                }
-            });
-            if (!Cookies.get('showEvent')) {
-                modal.show();
-            }
-        }
-
-    </script>
+    <!--    <div class="modal " id="eventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"-->
+    <!--         aria-labelledby="eventModalLabel" aria-hidden="true">-->
+    <!--        <div class="modal-dialog modal-sm">-->
+    <!--            <div class="modal-content">-->
+    <!--                <div class="modal-body" style="padding: 0;position: relative;">-->
+    <!--                    <div style="position: absolute;right: 5px;top:5px;" class="text-white">-->
+    <!--                        <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" sty></button>-->
+    <!--                    </div>-->
+    <!--                    <img src="/img/event/5.jpeg" style="width: 100%;" alt=""/>-->
+    <!--                </div>-->
+    <!--                <div class="modal-footer">-->
+    <!--                    <label>-->
+    <!--                        <input type="checkbox" id="event-checkbox"/> Don't show again today-->
+    <!--                    </label>-->
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <script>-->
+    <!--        if ([[${isDesktop}]]) {-->
+    <!--            let modal = new bootstrap.Modal(document.getElementById('eventModal'));-->
+    <!--            let eventModal = $('#eventModal');-->
+    <!--            eventModal.on('shown.bs.modal', function () {-->
+    <!--                let $modal_dialog = $(this).find('.modal-dialog');-->
+    <!--                let m_top = ($(window).height() - $modal_dialog.height()) / 5;-->
+    <!--                $modal_dialog.css({-->
+    <!--                    'margin': m_top + 'px auto',-->
+    <!--                    'max-width': '300px'-->
+    <!--                });-->
+    <!--            });-->
+    <!--            eventModal.on('hide.bs.modal', function () {-->
+    <!--                if ($('#event-checkbox').is(':checked')) {-->
+    <!--                    let now = new Date();-->
+    <!--                    let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);-->
+    <!--                    Cookies.set('showEvent', 'true', {expires: expires});-->
+    <!--                }-->
+    <!--            });-->
+    <!--            if (!Cookies.get('showEvent')) {-->
+    <!--                modal.show();-->
+    <!--            }-->
+    <!--        }-->
+    <!--    </script>-->
     <!-- Back to Top -->
 </th:block>
 <!-- Footer End -->
