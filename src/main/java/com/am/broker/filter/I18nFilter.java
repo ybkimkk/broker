@@ -49,7 +49,7 @@ public class I18nFilter implements Filter {
     private boolean shouldFilter(HttpServletRequest request) {
         String requestURI = request.getRequestURI();
         return !ServletUtils.checkStatic(request) &&
-                !requestURI.equals("/block") &&
-                !requestURI.equals("/denied");
+                !"/block".equals(requestURI) &&
+                !"/denied".equals(requestURI);
     }
 }
