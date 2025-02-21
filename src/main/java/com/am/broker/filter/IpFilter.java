@@ -61,7 +61,7 @@ public class IpFilter implements Filter {
                         httpResponse.sendRedirect("/denied");
                     }
                 } catch (Exception e) {
-                    filterChain.doFilter(servletRequest, httpResponse);
+//                    filterChain.doFilter(servletRequest, httpResponse);
                 }
             }
         }

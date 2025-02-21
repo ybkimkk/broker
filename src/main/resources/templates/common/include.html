@@ -47,31 +47,31 @@
     </script>
 
     <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return;
-            n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) f._fbq = n;
-            n.push = n;
-            n.loaded = !0;
-            n.version = '2.0';
-            n.queue = [];
-            t = b.createElement(e);
-            t.async = !0;
-            t.src = v;
-            s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '883685063155203');
-        fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-                   src="https://www.facebook.com/tr?id=883685063155203&ev=PageView&noscript=1"
-    /></noscript>
+    <!--    <script>-->
+    <!--        !function (f, b, e, v, n, t, s) {-->
+    <!--            if (f.fbq) return;-->
+    <!--            n = f.fbq = function () {-->
+    <!--                n.callMethod ?-->
+    <!--                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)-->
+    <!--            };-->
+    <!--            if (!f._fbq) f._fbq = n;-->
+    <!--            n.push = n;-->
+    <!--            n.loaded = !0;-->
+    <!--            n.version = '2.0';-->
+    <!--            n.queue = [];-->
+    <!--            t = b.createElement(e);-->
+    <!--            t.async = !0;-->
+    <!--            t.src = v;-->
+    <!--            s = b.getElementsByTagName(e)[0];-->
+    <!--            s.parentNode.insertBefore(t, s)-->
+    <!--        }(window, document, 'script',-->
+    <!--            'https://connect.facebook.net/en_US/fbevents.js');-->
+    <!--        fbq('init', '883685063155203');-->
+    <!--        fbq('track', 'PageView');-->
+    <!--    </script>-->
+    <!--    <noscript><img height="1" width="1" style="display:none"-->
+    <!--                   src="https://www.facebook.com/tr?id=883685063155203&ev=PageView&noscript=1"-->
+    <!--    /></noscript>-->
     <!-- End Meta Pixel Code -->
 
 </th:block>
@@ -126,7 +126,7 @@
                     <p class="m-0"><b class="primary-color">澳特证券</b></p>
                     <p class="m-0"><b class="primary-color">AM-Broker</b></p>
                 </div>
-               <h3  th:if="${selectedLanguageKey !='cn'}" class="m-0 primary-color">AM-Broker</h3>
+                <h3 th:if="${selectedLanguageKey !='cn'}" class="m-0 primary-color">AM-Broker</h3>
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
@@ -339,17 +339,22 @@
                     <div class="col-lg-5 col-md-12">
                         <h3 th:text="${footer['footer.7']}" class="text-white mb-4">Subscribe</h3>
                         <p th:text="${footer['footer.8']}">Join Our Mailing List & to get our news.</p>
-<!--                        <p th:text="${footer['footer.9']}" style="margin-top: 30px;"></p>-->
+                        <!--                        <p th:text="${footer['footer.9']}" style="margin-top: 30px;"></p>-->
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="copyright">
-                <div class="row justify-content-between">
-                    <div class="col-lg-9 mb-3 mb-md-0 align-items-center mb-md-3 text-white"
-                         th:utext="${footer['footer.5']}">
-                    </div>
+                <div class=" justify-content-between">
+                    <p class="mb-3 mb-md-0 align-items-center mb-md-3 text-white"
+                          th:utext="${footer['footer.5']}"></p>
+                    <p>
+                       <b style="color:red">Risk Warning</b>: Spread bets and CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. The vast majority of retail client accounts lose money when trading CFDs. You should consider whether you can afford to take the high risk of losing your money.
+                    </p>
+                    <p>
+                        Restricted Regions: Atom Markets Ltd does not provide its services to residents of certain countries, including but not limited to Canada, Iran and the United States of America (USA), nor to any person in any such country or jurisdiction where such distribution or use of the Services would be contrary to local law or regulation
+                    </p>
                 </div>
             </div>
         </div>
@@ -360,50 +365,6 @@
 
     <img id="popover-image" src="/img/qrCode/1.png" style="display: none;">
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
-    <!-- Modal -->
-    <!--    <div class="modal " id="eventModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"-->
-    <!--         aria-labelledby="eventModalLabel" aria-hidden="true">-->
-    <!--        <div class="modal-dialog modal-sm">-->
-    <!--            <div class="modal-content">-->
-    <!--                <div class="modal-body" style="padding: 0;position: relative;">-->
-    <!--                    <div style="position: absolute;right: 5px;top:5px;" class="text-white">-->
-    <!--                        <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" sty></button>-->
-    <!--                    </div>-->
-    <!--                    <img src="/img/event/5.jpeg" style="width: 100%;" alt=""/>-->
-    <!--                </div>-->
-    <!--                <div class="modal-footer">-->
-    <!--                    <label>-->
-    <!--                        <input type="checkbox" id="event-checkbox"/> Don't show again today-->
-    <!--                    </label>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--    </div>-->
-    <!--    <script>-->
-    <!--        if ([[${isDesktop}]]) {-->
-    <!--            let modal = new bootstrap.Modal(document.getElementById('eventModal'));-->
-    <!--            let eventModal = $('#eventModal');-->
-    <!--            eventModal.on('shown.bs.modal', function () {-->
-    <!--                let $modal_dialog = $(this).find('.modal-dialog');-->
-    <!--                let m_top = ($(window).height() - $modal_dialog.height()) / 5;-->
-    <!--                $modal_dialog.css({-->
-    <!--                    'margin': m_top + 'px auto',-->
-    <!--                    'max-width': '300px'-->
-    <!--                });-->
-    <!--            });-->
-    <!--            eventModal.on('hide.bs.modal', function () {-->
-    <!--                if ($('#event-checkbox').is(':checked')) {-->
-    <!--                    let now = new Date();-->
-    <!--                    let expires = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59);-->
-    <!--                    Cookies.set('showEvent', 'true', {expires: expires});-->
-    <!--                }-->
-    <!--            });-->
-    <!--            if (!Cookies.get('showEvent')) {-->
-    <!--                modal.show();-->
-    <!--            }-->
-    <!--        }-->
-    <!--    </script>-->
-    <!-- Back to Top -->
 </th:block>
 <!-- Footer End -->
 

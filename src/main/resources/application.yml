@@ -20,14 +20,14 @@ spring:
       additional-paths: src/main/java
   thymeleaf:
     #调试时候写false 打包写true
-    cache: true
-    check-template: true
+    cache: false
+    check-template: false
     check-template-location: true
     content-type: text/html
     enabled: true
     encoding: UTF-8
     excluded-view-names: ''
-    mode: HTML5
+    mode: HTML
     prefix: classpath:/templates/
     suffix: .html
 logging:
