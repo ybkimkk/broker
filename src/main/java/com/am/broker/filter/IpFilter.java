@@ -49,18 +49,22 @@ public class IpFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) servletResponse;
         if (!osName.startsWith("windows")) {
             String requestURI = httpRequest.getRequestURI();
-            if (!requestURI.equals("/denied")) {
+            if (!"/denied".equals(requestURI)) {
                 try {
                     String ipAddress = ServletUtils.getClientIp(httpRequest);
+                    log.info("IP Address: {}", ipAddress);
                     InetAddress ipAddressInet = InetAddress.getByName(ipAddress);
                     CountryResponse countryResponse = dbReader.country(ipAddressInet);
                     String countryCode = countryResponse.getCountry().getIsoCode();
                     // 如果是新西兰或澳大利亚的IP，拒绝访问
                     if ("NZ".equals(countryCode) || "AU".equals(countryCode)) {
+                        log.warn("访问拒绝：IP {} 来源国家 {}", ipAddress, countryCode);
                         httpResponse.setStatus(HttpServletResponse.SC_FORBIDDEN);
                         httpResponse.sendRedirect("/denied");
+                        return;
                     }
                 } catch (Exception e) {
+                    log.error("过滤器错误", e);
 //                    filterChain.doFilter(servletRequest, httpResponse);
                 }
             }

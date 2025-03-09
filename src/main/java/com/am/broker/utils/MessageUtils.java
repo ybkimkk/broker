@@ -37,6 +37,7 @@ public class MessageUtils {
         languageMap.put("cn", "简体中文");
         languageMap.put("jp", "日本語");
         languageMap.put("ar", "بالعربية");
+        languageMap.put("ru", "Русский");
     }
 
     /**

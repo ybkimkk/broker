@@ -195,7 +195,7 @@
                         <script>
                             function jumpToLogin() {
                                 if (isVn()) {
-                                    window.open("https://trader.am-broker.com/admin/login.php", '_blank');
+                                    window.open("https://vnclient.am-broker.com/login", '_blank');
                                     return;
                                 }
                                 window.open("https://office.am-broker.com/admin/login.php", '_blank');
@@ -203,7 +203,7 @@
 
                             function jumpToRegister() {
                                 if (isVn()) {
-                                    window.open("https://trader.am-broker.com/admin/reg.php", '_blank');
+                                    window.open("https://vnclient.am-broker.com/register/trader", '_blank');
                                     return;
                                 }
                                 window.open("https://office.am-broker.com/admin/reg.php", '_blank');
@@ -292,7 +292,7 @@
                     <div>
                         <p class="m-0" th:text="${footer['footer.3.1']}"></p>
                         <small class="text-white d-inline-block mb-2" th:text="${footer['footer.3.2']}"></small>
-                        <small class="text-white" th:text="${footer['footer.3.3']}"></small>
+<!--                        <small class="text-white" th:text="${footer['footer.3.3']}"></small>-->
                     </div>
                 </div>
             </div>
